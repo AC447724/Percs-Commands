@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    
+    <title>PERCS | Legal</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Plus+Jakarta+Sans:wght@700&display=swap');
+
+        :root {
+            --bg: #000000;
+            --card-bg: #0a0a0a;
+            --text-primary: #ffffff;
+            --text-secondary: #888888;
+            --border: rgba(255, 255, 255, 0.08);
+            --font-main: 'Inter', sans-serif;
+            --font-heading: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text-primary);
+            font-family: var(--font-main);
+            line-height: 1.6;
+            padding: 40px 20px;
+            margin: 0;
+        }
+
+        .container { max-width: 800px; margin: 0 auto; }
+
+        /* Navigation Style matching FAQ */
+        .top-nav { display: flex; justify-content: center; margin-bottom: 60px; }
+        .nav-pill {
+            display: flex; background: rgba(10, 10, 10, 0.8); backdrop-filter: blur(12px);
+            border: 1px solid var(--border); padding: 6px 12px; border-radius: 100px; gap: 8px;
+        }
+        .nav-pill a {
+            color: var(--text-secondary); text-decoration: none; font-size: 13px;
+            padding: 8px 16px; border-radius: 100px; transition: 0.2s;
+        }
+        .nav-pill a:hover { color: #fff; }
+
+        h1 { font-family: var(--font-heading); font-size: 48px; letter-spacing: -2px; margin-bottom: 40px; text-align: center; }
+        h2 { font-family: var(--font-heading); color: #fff; font-size: 24px; margin-top: 40px; border-bottom: 1px solid var(--border); padding-bottom: 10px; }
+        
+        .legal-section { background: var(--card-bg); border: 1px solid var(--border); border-radius: 24px; padding: 40px; margin-bottom: 40px; }
+        p, li { color: var(--text-secondary); font-size: 15px; margin-bottom: 15px; }
+        strong { color: #fff; }
+
+        code { background: rgba(255,255,255,0.05); padding: 2px 6px; border-radius: 4px; font-family: monospace; }
+    </style>
+</head>
+<body>
+
+    <nav class="top-nav">
+        <div class="nav-pill">
+            <a href="https://percs.fun/bot">Home</a>
+            <a href="https://percs.fun/bot/commands">Commands</a>
+            <a href="faq">FAQ</a>
+            <a href="#" style="background: rgba(255,255,255,0.08); color: #fff;">Legal</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>Legal <span>Center</span></h1>
+
+        <section class="legal-section">
+            <h2>Terms of Service</h2>
+            <p>Last Updated: February 2026</p>
+            
+            <p>By inviting <strong>PERCS</strong> to your server or using our website, you agree to the following terms:</p>
+            
+            <p><strong>1. Acceptable Use</strong><br>
+            You may not use PERCS for any illegal activities or to violate Discord’s Terms of Service. Spamming bot commands or attempting to exploit the economy system is grounds for a global blacklist.</p>
+
+            <p><strong>2. User-Uploaded Content</strong><br>
+            If using our file-hosting features (similar to Catbox), you retain ownership of your files but grant us the right to host them. Strictly no malware, illegal content, or copyrighted material you do not own.</p>
+
+            <p><strong>3. Disclaimer</strong><br>
+            PERCS is provided "as is." We are not responsible for any data loss, server "raids" resulting from improper permission setups, or downtime.</p>
+        </section>
+
+        <section class="legal-section">
+            <h2>Privacy Policy</h2>
+            <p><strong>1. Data Collection</strong><br>
+            We collect the minimum amount of data required to function:</p>
+            <ul>
+                <li><strong>User IDs:</strong> To track XP and Economy balances.</li>
+                <li><strong>Server IDs:</strong> To save custom configurations (prefixes, log channels).</li>
+                <li><strong>Usage Logs:</strong> Commands used are logged temporarily to debug errors.</li>
+            </ul>
+
+            <p><strong>2. Data Retention</strong><br>
+            We follow a <strong>Zero-Persistence Protocol</strong> for message content. We do not read, store, or sell your private messages. Economy and XP data are stored until a user requests deletion via our Discord support.</p>
+
+            <p><strong>3. Third Parties</strong><br>
+            We do not share your data with third parties. Your Discord information is used solely for the internal functionality of the PERCS bot.</p>
+        </section>
+    </div>
+
+</body>
+</html>
