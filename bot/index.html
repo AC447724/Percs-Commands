@@ -59,7 +59,7 @@
             border: 1px solid var(--border);
             padding: 6px 12px;
             border-radius: 100px;
-            gap: 8px;
+            gap: 4px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
 
@@ -152,12 +152,14 @@
             padding: 40px;
             border-radius: 24px;
             transition: 0.3s;
+            display: flex;
+            flex-direction: column;
         }
 
         .feature-card:hover { border-color: rgba(255,255,255,0.15); transform: translateY(-5px); }
 
         .feature-card h3 { font-family: var(--font-heading); font-size: 24px; margin-bottom: 12px; }
-        .feature-card p { color: var(--text-secondary); font-size: 15px; line-height: 1.6; }
+        .feature-card p { color: var(--text-secondary); font-size: 15px; line-height: 1.6; margin-bottom: 20px; }
 
         .feature-icon {
             width: 40px;
@@ -170,6 +172,20 @@
             margin-bottom: 24px;
             color: #fff;
         }
+
+        .card-btn {
+            margin-top: auto;
+            align-self: flex-start;
+            color: #fff;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 600;
+            border: 1px solid var(--border);
+            padding: 8px 20px;
+            border-radius: 100px;
+            transition: 0.2s;
+        }
+        .card-btn:hover { background: #fff; color: #000; }
 
         /* --- FOOTER --- */
         footer {
@@ -199,6 +215,7 @@
             <a href="#" class="active">Home</a>
             <a href="commands">Commands</a>
             <a href="faq">FAQ</a>
+            <a href="https://percs.fun/bot/legal">Legal</a>
             <a href="https://discord.gg/dAHEdfkDzX">Discord</a>
         </div>
     </nav>
@@ -236,6 +253,15 @@
             </div>
             <h3>Modular Utility</h3>
             <p>From Economy systems to Roleplay and Moderation, toggle exactly what your community needs.</p>
+        </div>
+
+        <div class="feature-card">
+            <div class="feature-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            </div>
+            <h3>Legal & Compliance</h3>
+            <p>Review our Terms of Service and Privacy Policy to see how we handle data and user safety.</p>
+            <a href="https://percs.fun/bot/legal" class="card-btn">View Legal Center</a>
         </div>
     </section>
 
