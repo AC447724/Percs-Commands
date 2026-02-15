@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PERCS // COMMANDS</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Plus+Jakarta+Sans:wght@700&family=JetBrains+Mono&display=swap');
+
+        :root {
+            --bg: #000000;
+            --card-bg: #0a0a0a;
+            --card-hover: #121212;
+            --text-primary: #ffffff;
+            --text-secondary: #888888;
+            --accent: #ffffff;
+            --border: rgba(255, 255, 255, 0.08);
+            --font-main: 'Inter', sans-serif;
+            --font-heading: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text-primary);
+            font-family: var(--font-main);
+            overflow-x: hidden;
+            background-image: radial-gradient(circle at center, #111 0%, #000 100%);
+            min-height: 100vh;
+            padding: clamp(40px, 10vh, 80px) 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* --- HERO --- */
+        .hero { text-align: center; margin-bottom: 60px; }
+        
+        .hero h1 {
+            font-family: var(--font-heading);
+            font-size: clamp(40px, 8vw, 72px);
+            letter-spacing: -3px;
+            margin-bottom: 30px;
+        }
+
+        .hero h1 span { color: var(--text-secondary); font-weight: 400; }
+
+        .search-wrapper {
+            max-width: 500px;
+            margin: 0 auto 40px auto;
+        }
+
+        .search-bar {
+            width: 100%;
+            background: #0d0d0d;
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 16px 24px;
+            color: #fff;
+            font-size: 16px;
+            outline: none;
+            transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            text-align: center;
+        }
+
+        .search-bar:focus { border-color: #444; background: #111; box-shadow: 0 0 0 4px rgba(255,255,255,0.03); }
+
+        /* --- FILTERS --- */
+        .categories {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+
+        .cat-pill {
+            background: #0d0d0d;
+            border: 1px solid var(--border);
+            padding: 8px 18px;
+            border-radius: 100px;
+            font-size: 13px;
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: 0.2s;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .cat-pill:hover, .cat-pill.active {
+            background: #fff;
+            color: #000;
+            border-color: #fff;
+        }
+
+        /* --- GRID --- */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            transition: 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .card:hover {
+            background: var(--card-hover);
+            transform: translateY(-4px);
+            border-color: rgba(255,255,255,0.15);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+
+        .cmd-name {
+            font-family: var(--font-heading);
+            font-size: 22px;
+            color: #fff;
+            letter-spacing: -0.5px;
+        }
+
+        .type-badge {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 10px;
+            text-transform: uppercase;
+            padding: 2px 8px;
+            border-radius: 4px;
+            background: rgba(255,255,255,0.05);
+            color: var(--text-secondary);
+        }
+
+        .cmd-desc {
+            color: var(--text-secondary);
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 25px;
+            flex-grow: 1;
+        }
+
+        .usage-container {
+            margin-top: auto;
+            background: #000;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 12px 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .usage-container:hover { border-color: #333; }
+
+        .usage-text {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12px;
+            color: #eee;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .copy-icon { opacity: 0.3; }
+
+        /* --- NOTIFICATION --- */
+        #toast {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #fff;
+            color: #000;
+            padding: 10px 20px;
+            border-radius: 100px;
+            font-size: 13px;
+            font-weight: 600;
+            opacity: 0;
+            transition: 0.3s;
+            pointer-events: none;
+            z-index: 1000;
+        }
+
+        @media (max-width: 768px) {
+            .grid { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 44px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="hero">
+            <h1>Commands <span>Matrix</span></h1>
+            
+            <div class="search-wrapper">
+                <input type="text" id="searchInput" class="search-bar" placeholder="Search protocol commands..." onkeyup="processFilter()">
+            </div>
+
+            <div class="categories" id="catBox"></div>
+        </div>
+
+        <div class="grid" id="cmdGrid"></div>
+    </div>
+
+    <div id="toast">Copied to clipboard</div>
+
+    <script>
+        let cmdData = [];
+        let currentCat = 'All';
+
+        async function init() {
+            try {
+                const res = await fetch('commands.json');
+                cmdData = await res.json();
+                
+                // Remove duplicates if any (e.g., afk appears twice in your json snippet)
+                // Filter categories
+                renderCategories();
+                renderCards(cmdData);
+            } catch (e) {
+                document.getElementById('cmdGrid').innerHTML = `<p style="text-align:center; color:red;">[ERROR] commands.json not found in root directory.</p>`;
+            }
+        }
+
+        function renderCategories() {
+            const cats = ['All', ...new Set(cmdData.map(c => c.category))];
+            const container = document.getElementById('catBox');
+            container.innerHTML = cats.map(cat => `
+                <div class="cat-pill ${cat === 'All' ? 'active' : ''}" onclick="setCategory('${cat}', this)">
+                    ${cat}
+                </div>
+            `).join('');
+        }
+
+        function setCategory(cat, el) {
+            currentCat = cat;
+            document.querySelectorAll('.cat-pill').forEach(p => p.classList.remove('active'));
+            el.classList.add('active');
+            processFilter();
+        }
+
+        function processFilter() {
+            const term = document.getElementById('searchInput').value.toLowerCase();
+            const filtered = cmdData.filter(c => {
+                const matchesSearch = c.name.toLowerCase().includes(term) || c.description.toLowerCase().includes(term);
+                const matchesCat = currentCat === 'All' || c.category === currentCat;
+                return matchesSearch && matchesCat;
+            });
+            renderCards(filtered);
+        }
+
+        function renderCards(data) {
+            const grid = document.getElementById('cmdGrid');
+            grid.innerHTML = data.map(cmd => {
+                // Generate usage if usage string doesn't exist
+                let usageStr = cmd.usage;
+                if (!usageStr) {
+                    const prefix = cmd.type === 'prefix' ? '.' : '/';
+                    const args = cmd.arguments && cmd.arguments.length ? ' ' + cmd.arguments.join(' ') : '';
+                    usageStr = `${prefix}${cmd.name}${args}`;
+                }
+
+                return `
+                <div class="card">
+                    <div class="card-header">
+                        <span class="cmd-name">${cmd.name}</span>
+                        <span class="type-badge">${cmd.type}</span>
+                    </div>
+                    <p class="cmd-desc">${cmd.description}</p>
+                    <div class="usage-container" onclick="copyText('${usageStr}')">
+                        <span class="usage-text">${usageStr}</span>
+                        <svg class="copy-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                    </div>
+                </div>
+                `;
+            }).join('');
+        }
+
+        function copyText(text) {
+            navigator.clipboard.writeText(text);
+            const toast = document.getElementById('toast');
+            toast.style.opacity = '1';
+            setTimeout(() => toast.style.opacity = '0', 2000);
+        }
+
+        init();
+    </script>
+</body>
+</html>
