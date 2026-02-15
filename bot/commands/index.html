@@ -117,9 +117,18 @@
             cursor: pointer;
             transition: 0.2s;
             font-family: 'JetBrains Mono', monospace;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .cat-pill span {
+            opacity: 0.5;
+            font-size: 11px;
         }
 
         .cat-pill:hover, .cat-pill.active { background: #fff; color: #000; border-color: #fff; }
+        .cat-pill:hover span, .cat-pill.active span { opacity: 0.8; }
 
         /* --- GRID --- */
         .grid {
@@ -219,13 +228,30 @@
         }
 
         function renderCategories() {
-            const cats = ['All', ...new Set(cmdData.map(c => c.category))];
+            // Calculate counts for each category
+            const categoryCounts = cmdData.reduce((acc, cmd) => {
+                acc[cmd.category] = (acc[cmd.category] || 0) + 1;
+                return acc;
+            }, {});
+
+            const uniqueCats = [...new Set(cmdData.map(c => c.category))];
             const container = document.getElementById('catBox');
-            container.innerHTML = cats.map(cat => `
-                <div class="cat-pill ${cat === 'All' ? 'active' : ''}" onclick="setCategory('${cat}', this)">
-                    ${cat}
+            
+            // Build the "All" pill
+            let html = `
+                <div class="cat-pill ${currentCat === 'All' ? 'active' : ''}" onclick="setCategory('All', this)">
+                    All <span>${cmdData.length}</span>
+                </div>
+            `;
+
+            // Build individual pills
+            html += uniqueCats.map(cat => `
+                <div class="cat-pill ${cat === currentCat ? 'active' : ''}" onclick="setCategory('${cat}', this)">
+                    ${cat} <span>${categoryCounts[cat]}</span>
                 </div>
             `).join('');
+
+            container.innerHTML = html;
         }
 
         function setCategory(cat, el) {
