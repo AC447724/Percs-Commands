@@ -41,7 +41,7 @@
             min-height: 100vh;
         }
 
-        /* --- FLOATING NAV --- */
+        /* --- UPDATED FLOATING NAV --- */
         .top-nav {
             display: flex;
             justify-content: center;
@@ -57,9 +57,8 @@
             background: rgba(10, 10, 10, 0.8);
             backdrop-filter: blur(12px);
             border: 1px solid var(--border);
-            padding: 6px 12px;
+            padding: 5px; /* Tighter padding for a cleaner look */
             border-radius: 100px;
-            gap: 4px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
 
@@ -67,17 +66,17 @@
             color: var(--text-secondary);
             text-decoration: none;
             font-size: 13px;
-            font-weight: 500;
+            font-weight: 600; /* Bolder for better readability at small size */
             transition: 0.2s;
-            padding: 8px 16px;
+            padding: 8px 20px; /* More horizontal breathing room */
             border-radius: 100px;
         }
 
         .nav-pill a:hover { color: #fff; background: rgba(255,255,255,0.03); }
         .nav-pill a.active { color: #fff; background: rgba(255,255,255,0.08); }
 
-        .nav-divider { width: 1px; height: 16px; background: var(--border); margin: 0 8px; }
-        .nav-icon { display: flex; align-items: center; padding-left: 8px; }
+        .nav-divider { width: 1px; height: 16px; background: var(--border); margin: 0 4px; }
+        .nav-icon { display: flex; align-items: center; padding: 0 12px; }
 
         /* --- HERO SECTION --- */
         .hero {
@@ -108,6 +107,13 @@
             line-height: 1.5;
         }
 
+        .btn-group-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
         .btn-group { display: flex; gap: 15px; }
 
         .btn-primary {
@@ -135,6 +141,18 @@
 
         .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(255,255,255,0.1); }
         .btn-secondary:hover { background: rgba(255,255,255,0.05); }
+
+        .discord-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: 0.2s;
+        }
+        .discord-link:hover { color: #fff; }
 
         /* --- FEATURES GRID --- */
         .features {
@@ -216,7 +234,6 @@
             <a href="commands">Commands</a>
             <a href="faq">FAQ</a>
             <a href="https://percs.fun/bot/legal">Legal</a>
-            <a href="https://discord.gg/dAHEdfkDzX">Discord</a>
         </div>
     </nav>
 
@@ -224,9 +241,15 @@
         <h1>PERCS<span>.</span></h1>
         <p>A high-performance Discord protocol built for scale, privacy, and seamless server management.</p>
         
-        <div class="btn-group">
-            <a href="https://discord.com/oauth2/authorize?client_id=1427020960837402704" class="btn-primary">Add to Discord</a>
-            <a href="commands" class="btn-secondary">View Commands</a>
+        <div class="btn-group-wrapper">
+            <div class="btn-group">
+                <a href="https://discord.com/oauth2/authorize?client_id=1427020960837402704" class="btn-primary">Add to Discord</a>
+                <a href="commands" class="btn-secondary">View Commands</a>
+            </div>
+            <a href="https://discord.gg/dAHEdfkDzX" class="discord-link">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                Join Support Server
+            </a>
         </div>
     </header>
 
