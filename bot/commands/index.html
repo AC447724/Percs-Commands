@@ -149,7 +149,27 @@
 
         .card:hover { background: var(--card-hover); transform: translateY(-4px); border-color: rgba(255,255,255,0.15); }
 
-        .cmd-name { font-family: var(--font-heading); font-size: 22px; color: #fff; margin-bottom: 12px; }
+        .cmd-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 12px;
+        }
+
+        .cmd-name { font-family: var(--font-heading); font-size: 22px; color: #fff; }
+        
+        .admin-badge {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--text-secondary);
+            padding: 4px 10px;
+            border-radius: 4px;
+            border: 1px solid var(--border);
+        }
+
         .cmd-desc { color: var(--text-secondary); font-size: 14px; line-height: 1.6; margin-bottom: 25px; flex-grow: 1; }
 
         .usage-container {
@@ -314,9 +334,16 @@
                     usageStr = `${prefix}${cmd.name}${args}`;
                 }
 
+                const adminBadge = cmd.permission === 'Administrator' 
+                    ? `<span class="admin-badge">Administrator</span>` 
+                    : '';
+
                 return `
                 <div class="card">
-                    <span class="cmd-name">${cmd.name}</span>
+                    <div class="cmd-header">
+                        <span class="cmd-name">${cmd.name}</span>
+                        ${adminBadge}
+                    </div>
                     <p class="cmd-desc">${cmd.description}</p>
                     <div class="usage-container" onclick="copyText('${usageStr}')">
                         <span class="usage-text">Usage: <span style="color:#fff">${usageStr}</span></span>
