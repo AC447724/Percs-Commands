@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>percs.fun</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;500&display=swap');
@@ -90,7 +90,7 @@
         .sub-links a { color: var(--dim); font-family: var(--font-mono); font-size: 9px; text-decoration: none; letter-spacing: 1px; transition: 0.3s; }
         .sub-links a:hover { color: #fff; text-shadow: 0 0 8px #fff; }
 
-        /* Mobile Header (Hidden on Desktop) */
+        /* Mobile Header */
         .mobile-nav-toggle {
             display: none;
             position: fixed; top: 20px; right: 20px;
@@ -136,10 +136,16 @@
         .card h3 { font-family: var(--font-mono); font-size: 11px; letter-spacing: 3px; color: #fff; margin-bottom: 25px; text-transform: uppercase; }
         .card p { font-size: 15px; color: #52525b; line-height: 1.8; }
 
-        /* Telemetry Components */
-        .map-frame { height: 300px; background: #000; border: 1px solid var(--border); position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; }
-        .map-label { position: absolute; font-family: var(--font-mono); font-size: clamp(60px, 10vw, 120px); font-weight: 900; color: #08080a; user-select: none; }
-        
+        /* UI Components */
+        .btn-external {
+            display: inline-block; padding: 20px 40px; border: 1px solid #fff;
+            background: transparent; color: #fff; font-family: var(--font-mono);
+            font-size: 12px; font-weight: 700; text-transform: uppercase;
+            text-decoration: none; letter-spacing: 3px; transition: 0.4s;
+            margin-top: 30px;
+        }
+        .btn-external:hover { background: #fff; color: #000; box-shadow: 0 0 40px rgba(255,255,255,0.15); }
+
         .terminal-box { font-family: var(--font-mono); font-size: 10px; background: #000; border: 1px solid var(--border); padding: 25px; height: 300px; overflow: hidden; color: #333; }
 
         /* Auth UI */
@@ -156,28 +162,12 @@
         /* Fixed Telemetry */
         .sys-telemetry { position: fixed; bottom: 20px; right: 20px; font-family: var(--font-mono); font-size: 9px; color: #3f3f46; text-align: right; pointer-events: none; z-index: 10; }
 
-        /* --- MEDIA QUERIES --- */
-
-        /* Tablet & Mobile Layout */
         @media (max-width: 1024px) {
             body { flex-direction: column; }
-            .sidebar {
-                position: fixed;
-                left: -100%;
-                top: 0;
-                transition: 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-                width: 280px;
-            }
+            .sidebar { position: fixed; left: -100%; top: 0; transition: 0.5s cubic-bezier(0.16, 1, 0.3, 1); width: 280px; }
             .sidebar.open { left: 0; }
             .mobile-nav-toggle { display: block; }
             .viewport { padding: 80px 25px; }
-            .matrix-header { margin-bottom: 40px; }
-            .sys-telemetry { display: none; } /* Hide telemetry on mobile to save space */
-        }
-
-        @media (max-width: 640px) {
-            .feat-grid { grid-template-columns: 1fr; }
-            h1 { letter-spacing: -2px; }
         }
 
     </style>
@@ -195,19 +185,18 @@
             <span class="nav-label">Verification</span>
             <button class="nav-btn active" onclick="sh(event, 'auth')">Identity Handshake</button>
             <button class="nav-btn" onclick="sh(event, 'telemetry')">System Integrity</button>
-            <button class="nav-btn" onclick="sh(event, 'faq')">Technical FAQ</button>
         </nav>
 
         <nav class="nav-group" style="margin-top: 40px;">
             <span class="nav-label">Infrastructure</span>
+            <button class="nav-btn" onclick="sh(event, 'discord')">Discord Protocol</button>
             <button class="nav-btn" onclick="sh(event, 'vpn')">VPN Uplink</button>
             <button class="nav-btn" onclick="sh(event, 'osint')">OSINT</button>
             <button class="nav-btn" onclick="sh(event, 'mail')">Custom E-Mail</button>
-            <button class="nav-btn" onclick="sh(event, 'vault')">Private Drive</button>
         </nav>
 
         <div class="legal-footer">
-            <span class="nav-label">Commercial/Legal</span>
+            <span class="nav-label">Commercial / Legal</span>
             <a href="https://percs.fun/pricing" class="pricing-link">PRICING & ALLOCATION</a>
             <div class="sub-links">
                 <a href="https://percs.fun/tos">[ TERMS ]</a>
@@ -221,34 +210,44 @@
         <header class="matrix-header">
             <div class="m-stat"><div class="m-lbl">Total Stored</div><div class="m-val">1.13 TB</div></div>
             <div class="m-stat"><div class="m-lbl">Active Peers</div><div class="m-val">12 Users</div></div>
-            <div class="m-stat"><div class="m-lbl">Custom Emails</div><div class="m-val">50+ Emails</div></div>
+            <div class="m-stat"><div class="m-lbl">Latency</div><div class="m-val">14ms</div></div>
         </header>
 
         <div id="auth" class="sector active">
             <h1>Login</h1>
-            <p class="lead">Login to the dashboard here. To redeem your invite code, click on the link below.</p>
+            <p class="lead">Authorized access only. Identity synchronization required for protocol decryption.</p>
             <div class="auth-ui">
                 <input type="text" placeholder="user@percs.fun">
                 <input type="password" placeholder="••••••••••••••••">
                 <button class="btn-handshake" onclick="login()">Login</button>
-                <div style="margin-top: 30px; text-align: center;">
-                    <a href="https://percs.fun/claim" style="font-family: var(--font-mono); font-size: 10px; color: #333; text-decoration: none; letter-spacing: 2px;">REDEEM PEER INVITE TOKEN</a>
-                </div>
             </div>
         </div>
 
         <div id="telemetry" class="sector">
             <h1>System Integrity.</h1>
-            <p class="lead">Live telemetry from 12 global nodes. We operate on a strict <b>Zero-Fed Sharing Policy</b>.</p>
-            <div class="feat-grid" style="margin-bottom: 30px;">
-                <div class="map-frame">
-                    <div class="map-label">Live</div>
-                </div>
-                <div class="terminal-box" id="terminal"></div>
-            </div>
+            <p class="lead">Live heartbeats from global uplink nodes.</p>
+            <div class="terminal-box" id="terminal"></div>
         </div>
 
-        </main>
+        <div id="discord" class="sector">
+            <h1>Discord Protocol.</h1>
+            <p class="lead">Access the high-performance PERCS bot environment. Manage permissions, utility modules, and privacy settings.</p>
+            
+            <div class="feat-grid">
+                <div class="card">
+                    <h3>Utility Module</h3>
+                    <p>Sub-100ms response times for all matrix instructions and automation tasks.</p>
+                </div>
+                <div class="card">
+                    <h3>Privacy Lock</h3>
+                    <p>Zero-persistence logging protocol ensures peer data remains untracked.</p>
+                </div>
+            </div>
+
+            <a href="https://percs.fun/bot" class="btn-external">Access Bot Interface</a>
+        </div>
+
+    </main>
 
     <div class="sys-telemetry">
         <div>STATUS: <span style="color: var(--success);">STABLE</span></div>
@@ -256,29 +255,21 @@
     </div>
 
     <script>
-        // Toggle Mobile Menu
         function toggleMenu() {
             document.getElementById('sidebar').classList.toggle('open');
             const btn = document.querySelector('.mobile-nav-toggle');
             btn.innerText = btn.innerText === "MENU" ? "CLOSE" : "MENU";
         }
 
-        // Sector Switching
         function sh(e, id) {
-            // Close mobile menu on click
             if(window.innerWidth <= 1024) toggleMenu();
-
             document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
             if(e.currentTarget.tagName === 'BUTTON') e.currentTarget.classList.add('active');
-            
             document.querySelectorAll('.sector').forEach(s => s.classList.remove('active'));
             document.getElementById(id).classList.add('active');
-            
-            // Scroll to top of viewport
             window.scrollTo(0,0);
         }
 
-        // Login VFX
         function login() {
             const btn = document.querySelector('.btn-handshake');
             btn.innerText = "SYNCHRONIZING...";
@@ -287,7 +278,7 @@
 
         // Live Terminal Log
         const term = document.getElementById('terminal');
-        const nodes = ["ZRH-01", "HKG-05", "ISL-02", "SEY-04", "SGP-09"];
+        const nodes = ["ZRH-01", "HKG-05", "ISL-02", "SEY-04"];
         function log() {
             if(!term) return;
             const line = document.createElement('div');
@@ -298,7 +289,6 @@
         }
         setInterval(log, 2000);
 
-        // Live Clock
         setInterval(() => {
             const now = new Date();
             document.getElementById('clock').innerText = `UTC ${now.getUTCHours().toString().padStart(2, '0')}:${now.getUTCMinutes().toString().padStart(2, '0')}:${now.getUTCSeconds().toString().padStart(2, '0')}`;
