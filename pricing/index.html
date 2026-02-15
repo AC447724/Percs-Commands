@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PERCs ALLOCATION</title>
+    <title>PERCS // ALLOCATION</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;500&display=swap');
         
@@ -15,7 +14,6 @@
             --dim: #44444a;
             --border: rgba(255, 255, 255, 0.07);
             --font-mono: 'JetBrains Mono', monospace;
-            --neon: #ffffff;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; cursor: crosshair; }
@@ -24,10 +22,10 @@
             background-color: var(--bg);
             color: var(--accent);
             font-family: 'Inter', sans-serif;
-            height: 100vh;
-            overflow: hidden;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
+            overflow-x: hidden;
         }
 
         /* VFX: Moving Grid */
@@ -42,105 +40,111 @@
             opacity: 0.15;
             animation: gridMove 20s linear infinite;
         }
-
         @keyframes gridMove { from { transform: perspective(500px) rotateX(60deg) translateY(0); } to { transform: perspective(500px) rotateX(60deg) translateY(60px); } }
 
         /* Header */
         header {
-            padding: 50px 80px;
+            padding: clamp(20px, 5%, 50px) clamp(20px, 8%, 80px);
             display: flex; justify-content: space-between; align-items: center;
             backdrop-filter: blur(10px);
             border-bottom: 1px solid var(--border);
             z-index: 100;
         }
 
-        .brand h1 { font-family: 'Space Grotesk', sans-serif; font-size: 32px; letter-spacing: -2px; }
-        .brand span { font-family: var(--font-mono); font-size: 10px; color: var(--dim); text-transform: uppercase; letter-spacing: 3px; }
+        .brand h1 { font-family: 'Space Grotesk', sans-serif; font-size: clamp(24px, 4vw, 32px); letter-spacing: -2px; }
+        .brand span { font-family: var(--font-mono); font-size: 9px; color: var(--dim); text-transform: uppercase; letter-spacing: 3px; }
 
         .btn-auth {
-            padding: 14px 28px;
+            padding: 12px 24px;
             background: var(--accent);
             color: #000;
             text-decoration: none;
             font-family: var(--font-mono);
-            font-size: 11px;
+            font-size: 10px;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 2px;
-            transition: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            transition: 0.4s;
             border: 1px solid var(--accent);
         }
+        .btn-auth:hover { background: transparent; color: #fff; }
 
-        .btn-auth:hover { background: transparent; color: #fff; box-shadow: 0 0 20px rgba(255,255,255,0.2); }
-
-        /* Horizontal Matrix */
+        /* Matrix Viewport */
         .matrix-viewport {
             flex-grow: 1;
             overflow-x: auto;
             overflow-y: hidden;
             display: flex;
             align-items: center;
-            padding: 0 80px;
+            padding: 0 clamp(20px, 8%, 80px);
             scroll-behavior: smooth;
-            -ms-overflow-style: none; scrollbar-width: none;
+            scrollbar-width: none;
+            /* Snap scrolling for mobile */
+            scroll-snap-type: x mandatory;
         }
         .matrix-viewport::-webkit-scrollbar { display: none; }
 
-        .tier-wrap { display: flex; gap: 40px; padding: 20px 0; }
+        .tier-wrap { display: flex; gap: 30px; padding: 40px 0; }
 
         .tier-card {
-            width: 400px; height: 520px;
+            flex-shrink: 0;
+            width: clamp(280px, 80vw, 400px); 
+            height: clamp(480px, 70vh, 520px);
             background: var(--panel);
             border: 1px solid var(--border);
-            padding: 50px;
+            padding: clamp(30px, 5%, 50px);
             backdrop-filter: blur(20px);
             transition: 0.5s cubic-bezier(0.16, 1, 0.3, 1);
             display: flex; flex-direction: column;
             position: relative;
             overflow: hidden;
+            scroll-snap-align: center;
         }
 
         .tier-card:hover {
             border-color: rgba(255,255,255,0.3);
             transform: scale(1.02) translateY(-10px);
             background: rgba(15, 15, 20, 0.9);
-            box-shadow: 0 30px 60px rgba(0,0,0,0.5);
         }
 
-        /* Subtle Glow on Hover */
-        .tier-card::after {
-            content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background: radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(255,255,255,0.05) 0%, transparent 50%);
-            opacity: 0; transition: opacity 0.3s; pointer-events: none;
-        }
-        .tier-card:hover::after { opacity: 1; }
-
-        .tier-label { font-family: var(--font-mono); font-size: 10px; color: var(--dim); letter-spacing: 4px; text-transform: uppercase; margin-bottom: 40px; }
-        .tier-price { font-family: 'Space Grotesk', sans-serif; font-size: 56px; font-weight: 700; margin-bottom: 20px; letter-spacing: -3px; }
-        .tier-price span { font-size: 16px; color: var(--dim); font-weight: 400; letter-spacing: 0; }
+        .tier-label { font-family: var(--font-mono); font-size: 10px; color: var(--dim); letter-spacing: 4px; text-transform: uppercase; margin-bottom: 30px; }
+        .tier-price { font-family: 'Space Grotesk', sans-serif; font-size: clamp(40px, 6vw, 56px); font-weight: 700; margin-bottom: 20px; letter-spacing: -3px; }
+        .tier-price span { font-size: 14px; color: var(--dim); font-weight: 400; letter-spacing: 0; }
 
         .feature-list { list-style: none; flex-grow: 1; }
         .feature-list li {
-            font-size: 14px; color: #888; margin-bottom: 18px;
-            display: flex; align-items: center; gap: 15px;
+            font-size: 13px; color: #888; margin-bottom: 15px;
+            display: flex; align-items: center; gap: 12px;
         }
-        .feature-list li::before { content: ""; width: 6px; height: 1px; background: var(--dim); }
-
-        .tier-card:hover .feature-list li { color: #ccc; }
-        .tier-card:hover .feature-list li::before { background: #fff; width: 12px; transition: 0.3s; }
+        .feature-list li::before { content: ""; width: 6px; height: 1px; background: var(--dim); flex-shrink: 0; }
 
         .status-tag {
             font-family: var(--font-mono); font-size: 9px; color: var(--dim);
-            text-transform: uppercase; letter-spacing: 2px; padding-top: 30px;
+            text-transform: uppercase; letter-spacing: 2px; padding-top: 25px;
             border-top: 1px solid var(--border);
         }
 
         /* Footer Telemetry */
         .telemetry {
-            padding: 40px 80px;
+            padding: 30px clamp(20px, 8%, 80px);
             display: flex; justify-content: space-between;
-            font-family: var(--font-mono); font-size: 10px; color: #222;
+            flex-wrap: wrap; gap: 15px;
+            font-family: var(--font-mono); font-size: 9px; color: #444;
             border-top: 1px solid var(--border);
+        }
+
+        /* --- MOBILE ADAPTATION --- */
+        @media (max-width: 768px) {
+            body { overflow-y: auto; }
+            .matrix-viewport { 
+                overflow-y: visible; 
+                align-items: flex-start;
+                padding-bottom: 50px;
+            }
+            .tier-wrap { 
+                padding-top: 20px;
+            }
+            .telemetry { justify-content: center; text-align: center; }
         }
     </style>
 </head>
@@ -164,7 +168,6 @@
                     <li>Entry-Level VPN Uplink</li>
                     <li>OSINT Matrix Search</li>
                     <li>10GB Metadata-Strip Vault</li>
-                    
                 </ul>
                 <div class="status-tag">Status: Handshake Required</div>
             </div>
@@ -176,7 +179,6 @@
                     <li>High-Speed Priority Nodes</li>
                     <li>Acoustic Forensic Tools</li>
                     <li>50GB Sharded Vault</li>
-                    
                 </ul>
                 <div class="status-tag">Access: Restricted</div>
             </div>
@@ -188,7 +190,6 @@
                     <li>Multi-Hop Shadow Protocol</li>
                     <li>Breach History API</li>
                     <li>150GB Sharded Vault</li>
-                    
                 </ul>
                 <div class="status-tag">Access: Restricted</div>
             </div>
@@ -223,7 +224,7 @@
                 <ul class="feature-list">
                     <li>All Current/Future Specs</li>
                     <li>Beta Neural Chat Access</li>
-                    <li>6505GB Auto-Wipe Vault</li>
+                    <li>650GB Auto-Wipe Vault</li>
                     <li>Badge Status</li>
                 </ul>
                 <div class="status-tag">Access: Restricted</div>
@@ -234,17 +235,19 @@
 
     <div class="telemetry">
         <div>UPLINK: ACTIVE 10GBPS</div>
-        <div>SCROLL TO NAVIGATE MATRIX</div>
         <div>GATEWAYS: XMR, BTC, SOL, USDT</div>
+        <div>© 2026 PERCS INFRASTRUCTURE</div>
     </div>
 
     <script>
         const viewport = document.getElementById('viewport');
 
-        // Smooth Horizontal Scroll
+        // Smooth Horizontal Scroll for Desktop
         viewport.addEventListener('wheel', (e) => {
-            e.preventDefault();
-            viewport.scrollLeft += e.deltaY * 1.5; // Multiplier for speed
+            if (window.innerWidth > 768) {
+                e.preventDefault();
+                viewport.scrollLeft += e.deltaY * 1.5;
+            }
         });
 
         // Interactive Card Glow Tracking
