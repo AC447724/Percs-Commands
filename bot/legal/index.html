@@ -25,23 +25,49 @@
             line-height: 1.6;
             padding: 40px 20px;
             margin: 0;
+            background-image: radial-gradient(circle at center, #111 0%, #000 100%);
+            min-height: 100vh;
         }
 
         .container { max-width: 800px; margin: 0 auto; }
 
-        /* Navigation Style matching FAQ */
-        .top-nav { display: flex; justify-content: center; margin-bottom: 60px; }
+        /* --- FLOATING NAV --- */
+        .top-nav {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 60px;
+            position: sticky;
+            top: 20px;
+            z-index: 1000;
+        }
+
         .nav-pill {
-            display: flex; background: rgba(10, 10, 10, 0.8); backdrop-filter: blur(12px);
-            border: 1px solid var(--border); padding: 6px 12px; border-radius: 100px; gap: 8px;
+            display: flex;
+            align-items: center;
+            background: rgba(10, 10, 10, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--border);
+            padding: 6px 12px;
+            border-radius: 100px;
+            gap: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
         }
+
         .nav-pill a {
-            color: var(--text-secondary); text-decoration: none; font-size: 13px;
-            padding: 8px 16px; border-radius: 100px; transition: 0.2s;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 500;
+            transition: 0.2s;
+            padding: 8px 16px;
+            border-radius: 100px;
         }
-        .nav-pill a:hover { color: #fff; }
+
+        .nav-pill a:hover { color: #fff; background: rgba(255,255,255,0.03); }
+        .nav-pill a.active { color: #fff; background: rgba(255,255,255,0.08); }
 
         h1 { font-family: var(--font-heading); font-size: 48px; letter-spacing: -2px; margin-bottom: 40px; text-align: center; }
+        h1 span { color: var(--text-secondary); font-weight: 400; }
         h2 { font-family: var(--font-heading); color: #fff; font-size: 24px; margin-top: 40px; border-bottom: 1px solid var(--border); padding-bottom: 10px; }
         
         .legal-section { background: var(--card-bg); border: 1px solid var(--border); border-radius: 24px; padding: 40px; margin-bottom: 40px; }
@@ -57,8 +83,8 @@
         <div class="nav-pill">
             <a href="https://percs.fun/bot">Home</a>
             <a href="https://percs.fun/bot/commands">Commands</a>
-            <a href="faq">FAQ</a>
-            <a href="#" style="background: rgba(255,255,255,0.08); color: #fff;">Legal</a>
+            <a href="https://percs.fun/bot/faq">FAQ</a>
+            <a href="#" class="active">Legal</a>
         </div>
     </nav>
 
@@ -75,10 +101,10 @@
             You may not use PERCS for any illegal activities or to violate Discord’s Terms of Service. Spamming bot commands or attempting to exploit the economy system is grounds for a global blacklist.</p>
 
             <p><strong>2. User-Uploaded Content</strong><br>
-            If using our file-hosting features (similar to Catbox), you retain ownership of your files but grant us the right to host them. Strictly no malware, illegal content, or copyrighted material you do not own.</p>
+            If using our file-hosting features, you retain ownership of your files but grant us the right to host them. Strictly no malware, illegal content, or copyrighted material you do not own.</p>
 
             <p><strong>3. Disclaimer</strong><br>
-            PERCS is provided "as is." We are not responsible for any data loss, server "raids" resulting from improper permission setups, or downtime.</p>
+            PERCS is provided "as is." We are not responsible for any data loss, server disruptions, or downtime.</p>
         </section>
 
         <section class="legal-section">
