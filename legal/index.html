@@ -3,30 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    
     <title>PERCS | Legal</title>
-    
-    <meta name="title" content="PERCS | Legal">
-    <meta name="description" content="Official Terms of Service and Privacy Policy for PERCS. Learn about our AES-256-GCM encryption standards and data protocols.">
+    <meta name="description" content="Official Terms of Service and Privacy Policy for PERCS. Learn about our AES-256-GCM encryption standards and AI moderation protocols.">
     <meta name="theme-color" content="#000000">
-
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://percs.fun/legal">
-    <meta property="og:title" content="PERCS | Legal">
-    <meta property="og:description" content="Elite Discord utility secured with military-grade privacy.">
-    <meta property="og:image" content="https://raw.githubusercontent.com/AC447724/Percs-Commands/main/assets/banner.png">
-
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://percs.fun/legal">
-    <meta property="twitter:title" content="PERCS | Legal">
-    <meta property="twitter:description" content="Securing your server data with 64-character entropy salts.">
-    <meta property="twitter:image" content="https://raw.githubusercontent.com/AC447724/Percs-Commands/main/assets/banner.png">
-
-    <link rel="icon" type="image/png" href="pf.png?v=2">
-
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Plus+Jakarta+Sans:wght@700&family=JetBrains+Mono&display=swap');
-
+        
         :root {
             --bg: #000000;
             --card-bg: rgba(12, 12, 12, 0.7);
@@ -40,15 +22,7 @@
 
         * { margin: 0; padding: 0; box-sizing: border-box; cursor: crosshair; }
         html { scroll-behavior: smooth; background: #000; }
-        
-        body {
-            background-color: var(--bg);
-            color: var(--text-primary);
-            font-family: var(--font-main);
-            overflow-x: hidden;
-            min-height: 100vh;
-            line-height: 1.6;
-        }
+        body { background-color: var(--bg); color: var(--text-primary); font-family: var(--font-main); overflow-x: hidden; min-height: 100vh; line-height: 1.6; }
 
         /* --- AMBIENT VFX --- */
         .ambient-glow {
@@ -58,21 +32,16 @@
             pointer-events: none; z-index: 1;
         }
 
-        /* --- NAV PILL --- */
-        .top-nav {
-            display: flex; justify-content: center;
-            padding-top: 40px; position: sticky; top: 20px; z-index: 1000;
-        }
+        /* --- CLEAN NAV --- */
+        .top-nav { display: flex; justify-content: center; padding-top: 40px; position: sticky; top: 20px; z-index: 1000; }
         .nav-pill {
             display: flex; align-items: center;
             background: rgba(13, 13, 13, 0.85);
             backdrop-filter: blur(25px);
             border: 1px solid var(--border);
-            padding: 6px; border-radius: 100px;
+            padding: 8px 12px; border-radius: 100px;
             box-shadow: 0 20px 50px rgba(0,0,0,0.8);
         }
-        .nav-pill .icon-btn { display: flex; padding: 0 15px; color: var(--text-secondary); opacity: 0.5; }
-        .nav-divider { width: 1px; height: 18px; background: var(--border); margin: 0 10px; }
         .nav-pill a {
             color: var(--text-secondary); text-decoration: none; font-size: 13px;
             font-weight: 500; padding: 8px 22px; border-radius: 100px; transition: 0.3s;
@@ -82,84 +51,40 @@
 
         /* --- CONTENT --- */
         .container { max-width: 900px; margin: 80px auto; padding: 0 20px; position: relative; z-index: 2; }
-
         h1 { 
-            font-family: var(--font-heading); 
-            font-size: clamp(40px, 8vw, 64px); 
-            letter-spacing: -3px; 
-            margin-bottom: 60px; 
-            text-align: center;
-            background: linear-gradient(to bottom, #fff 40%, #555 100%);
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            font-family: var(--font-heading); font-size: clamp(40px, 8vw, 64px); letter-spacing: -3px; margin-bottom: 60px; text-align: center;
+            background: linear-gradient(to bottom, #fff 40%, #555 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
         }
 
-        .legal-card {
-            background: var(--card-bg);
-            border: 1px solid var(--border);
-            border-radius: 32px;
-            padding: 60px;
-            margin-bottom: 40px;
-            backdrop-filter: blur(10px);
-        }
-
-        h2 { 
-            font-family: var(--font-heading); 
-            font-size: 28px; 
-            margin-bottom: 25px; 
-            letter-spacing: -1px;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-        
-        h2::before {
-            content: '';
-            width: 4px;
-            height: 24px;
-            background: #fff;
-            border-radius: 10px;
-        }
+        .legal-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 32px; padding: 60px; margin-bottom: 40px; backdrop-filter: blur(10px); }
+        h2 { font-family: var(--font-heading); font-size: 28px; margin-bottom: 25px; letter-spacing: -1px; display: flex; align-items: center; gap: 15px; }
+        h2::before { content: ''; width: 4px; height: 24px; background: #fff; border-radius: 100px; }
 
         .section-block { margin-bottom: 40px; }
         .section-block h3 { font-size: 14px; text-transform: uppercase; letter-spacing: 2px; color: #444; margin-bottom: 15px; font-weight: 800; }
-        
         p, li { color: var(--text-secondary); font-size: 16px; margin-bottom: 20px; }
         strong { color: #fff; font-weight: 600; }
 
         ul { list-style: none; padding-left: 0; }
-        li { display: flex; gap: 12px; }
+        li { display: flex; gap: 12px; margin-bottom: 15px; }
         li::before { content: '→'; color: #444; }
 
         .encryption-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: rgba(74, 222, 128, 0.05);
-            border: 1px solid rgba(74, 222, 128, 0.1);
-            color: var(--accent);
-            padding: 6px 14px;
-            border-radius: 100px;
-            font-family: 'JetBrains Mono';
-            font-size: 11px;
-            margin-bottom: 20px;
+            display: inline-flex; align-items: center; gap: 8px;
+            background: rgba(74, 222, 128, 0.05); border: 1px solid rgba(74, 222, 128, 0.1);
+            color: var(--accent); padding: 6px 14px; border-radius: 100px; font-family: 'JetBrains Mono'; font-size: 11px; margin-bottom: 20px;
         }
 
         footer { padding: 60px 20px; text-align: center; color: #222; font-family: 'JetBrains Mono'; font-size: 11px; letter-spacing: 3px; }
-
         .reveal { opacity: 0; transform: translateY(30px); transition: 1s cubic-bezier(0.2, 1, 0.3, 1); }
         .reveal.active { opacity: 1; transform: translateY(0); }
     </style>
 </head>
 <body>
-
     <div class="ambient-glow" id="glow"></div>
 
     <nav class="top-nav">
         <div class="nav-pill">
-            <div class="icon-btn">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
-            </div>
-            <div class="nav-divider"></div>
             <a href="https://percs.fun">Home</a>
             <a href="https://percs.fun/commands">Commands</a>
             <a href="https://percs.fun/faq">FAQ</a>
@@ -168,63 +93,60 @@
     </nav>
 
     <div class="container">
-        <h1 class="reveal">Legal</h1>
+        <h1 class="reveal">Legal Protocols</h1>
 
         <section class="legal-card reveal">
             <h2>Terms of Service</h2>
             <div class="section-block">
-                <h3>Last Updated</h3>
-                <p>February 2026</p>
-            </div>
-            
-            <div class="section-block">
-                <h3>01. Acceptance</h3>
-                <p>By integrating the <strong>PERCS</strong> application into a Discord guild or interacting with our API, you enter a binding agreement to adhere to these protocols. Failure to comply results in immediate termination of service and global blacklisting.</p>
+                <h3>01. Protocol Acceptance</h3>
+                <p>By integrating <strong>PERCS</strong>, you agree to these terms. Unauthorized use, reverse engineering of our AI moderation heuristics, or command flooding will result in a permanent hardware-level ban from our network infrastructure.</p>
             </div>
 
             <div class="section-block">
-                <h3>02. Technical Conduct</h3>
-                <p>Users are strictly prohibited from attempting to reverse-engineer the encryption handshake or spamming command relays. Automated exploits of the economy system are detected via heuristic analysis and will result in asset forfeiture.</p>
+                <h3>02. Service Availability</h3>
+                <p>While we maintain a 99.9% uptime target, PERCS is provided "as is." We are not liable for any data loss resulting from Discord API outages or server-side configuration errors by guild administrators.</p>
             </div>
 
             <div class="section-block">
-                <h3>03. Hosting Responsibility</h3>
-                <p>Files uploaded through the PERCS link-generation system are the sole responsibility of the uploader. We maintain a strict <strong>No-Malware Policy</strong>. Any files identified as threats or illegal material will be purged from the cache immediately.</p>
+                <h3>03. Intellectual Property</h3>
+                <p>All proprietary code, custom branding, and the <strong>PERCS</strong> architecture are protected. Users are prohibited from mimicking the "PERCS" brand or reselling bot services under a different alias.</p>
+            </div>
+
+            <div class="section-block">
+                <h3>04. Termination</h3>
+                <p>We reserve the right to revoke access to any server found to be hosting malicious content or violating Discord’s Developer Policy. Termination results in immediate purging of all server-specific encrypted salts.</p>
             </div>
         </section>
 
         <section class="legal-card reveal">
             <div class="encryption-badge">
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                AES-256-GCM PROTECTED
+                AES-256-GCM ARCHITECTURE
             </div>
             <h2>Privacy Policy</h2>
             
             <div class="section-block">
-                <h3>01. Hardened Data Collection</h3>
-                <p>We collect only the essential metadata required for decentralized functionality:</p>
+                <h3>01. AI Moderation Data</h3>
+                <p>Our <strong>Automated Content Filters</strong> process message data in volatile RAM. No plaintext message content is ever written to our permanent database disks. Sentiment scores are calculated locally and discarded once the moderation action is complete.</p>
+            </div>
+
+            <div class="section-block">
+                <h3>02. Collected Metadata</h3>
                 <ul>
-                    <li><strong>Cryptographic IDs:</strong> Discord Snowflake IDs for ledger-based XP and Economy balances.</li>
-                    <li><strong>Configuration Salts:</strong> Server-specific settings (prefixes, logging nodes) are stored behind 64-character entropy strings.</li>
-                    <li><strong>Volatile Logs:</strong> Command execution data is stored in temporary memory for error debugging and auto-purged every 24 hours.</li>
+                    <li><strong>Cryptographic Hashes:</strong> Used for tracking economy balances and level progress.</li>
+                    <li><strong>Node Configurations:</strong> Stored settings for custom prefixes and auto-mod triggers.</li>
+                    <li><strong>Behavioral Vectors:</strong> Temporary patterns used to detect raids (purged every 60 minutes).</li>
                 </ul>
             </div>
 
             <div class="section-block">
-                <h3>02. The Encryption Standard</h3>
-                <p>In accordance with our <strong>Elite Privacy</strong>, sensitive server data is encrypted. We do not possess the ability to read or store the plaintext content of your private messages. Decryption is only possible via the bot's unique hardware-bound private keys during active processing.</p>
-            </div>
-
-            <div class="section-block">
-                <h3>03. Data Autonomy</h3>
-                <p>Users retain full rights to their data. You may request a complete data wipe (Permanent Scrub) at any time through our support terminal. We never sell, trade, or leak user metadata to third-party entities.</p>
+                <h3>03. Security Standards</h3>
+                <p>Decryption is hardware-bound. Even in the event of a database leak, your server settings remain unreadable without our private entropy keys stored on physical HSM (Hardware Security Modules).</p>
             </div>
         </section>
     </div>
 
-    <footer>
-        PERCS LEGAL &mdash; &mdash; 2026
-    </footer>
+    <footer>PERCS LEGAL &mdash; 2026</footer>
 
     <script>
         const glow = document.getElementById('glow');
@@ -234,9 +156,7 @@
         });
 
         const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) entry.target.classList.add('active');
-            });
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
         }, { threshold: 0.1 });
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
     </script>
