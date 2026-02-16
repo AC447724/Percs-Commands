@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PERCS | Commands</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Plus+Jakarta+Sans:wght@700&family=JetBrains+Mono&display=swap');
+
+        :root {
+            --bg: #000000;
+            --card-bg: #0a0a0a;
+            --card-hover: #121212;
+            --text-primary: #ffffff;
+            --text-secondary: #888888;
+            --border: rgba(255, 255, 255, 0.08);
+            --font-main: 'Inter', sans-serif;
+            --font-heading: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text-primary);
+            font-family: var(--font-main);
+            overflow-x: hidden;
+            background-image: radial-gradient(circle at center, #111 0%, #000 100%);
+            min-height: 100vh;
+            padding: 40px 20px 80px 20px;
+        }
+
+        /* --- UPDATED FLOATING NAV --- */
+        .top-nav {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 60px;
+            position: sticky;
+            top: 20px;
+            z-index: 1000;
+        }
+
+        .nav-pill {
+            display: flex;
+            align-items: center;
+            background: rgba(10, 10, 10, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--border);
+            padding: 5px;
+            border-radius: 100px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .nav-pill a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 600;
+            transition: 0.2s;
+            padding: 8px 20px;
+            border-radius: 100px;
+        }
+
+        .nav-pill a:hover { color: #fff; background: rgba(255,255,255,0.03); }
+        .nav-pill a.active { color: #fff; background: rgba(255,255,255,0.08); }
+
+        .nav-divider { width: 1px; height: 16px; background: var(--border); margin: 0 4px; }
+        .nav-icon { display: flex; align-items: center; padding: 0 12px; }
+
+        /* --- HERO --- */
+        .hero { text-align: center; margin-bottom: 60px; margin-top: 20px; }
+        
+        .hero h1 {
+            font-family: var(--font-heading);
+            font-size: clamp(40px, 8vw, 72px);
+            letter-spacing: -3px;
+            margin-bottom: 30px;
+        }
+
+        .hero h1 span { color: var(--text-secondary); font-weight: 400; }
+
+        .search-wrapper { max-width: 500px; margin: 0 auto 40px auto; }
+
+        .search-bar {
+            width: 100%;
+            background: #0d0d0d;
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 16px 24px;
+            color: #fff;
+            font-size: 16px;
+            outline: none;
+            transition: 0.3s;
+            text-align: center;
+        }
+
+        .search-bar:focus { border-color: #444; background: #111; }
+
+        /* --- CATEGORIES --- */
+        .categories {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+
+        .cat-pill {
+            background: #0d0d0d;
+            border: 1px solid var(--border);
+            padding: 8px 18px;
+            border-radius: 100px;
+            font-size: 13px;
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: 0.2s;
+            font-family: 'JetBrains Mono', monospace;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .cat-pill span {
+            opacity: 0.5;
+            font-size: 11px;
+        }
+
+        .cat-pill:hover, .cat-pill.active { background: #fff; color: #000; border-color: #fff; }
+        .cat-pill:hover span, .cat-pill.active span { opacity: 0.8; }
+
+        /* --- GRID --- */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            transition: 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .card:hover { background: var(--card-hover); transform: translateY(-4px); border-color: rgba(255,255,255,0.15); }
+
+        .cmd-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 12px;
+        }
+
+        .cmd-name { font-family: var(--font-heading); font-size: 22px; color: #fff; }
+        
+        .admin-badge {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--text-secondary);
+            padding: 4px 10px;
+            border-radius: 4px;
+            border: 1px solid var(--border);
+        }
+
+        .cmd-desc { color: var(--text-secondary); font-size: 14px; line-height: 1.6; margin-bottom: 25px; flex-grow: 1; }
+
+        .usage-container {
+            margin-top: auto;
+            background: #000;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 12px 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .usage-text { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #eee; }
+
+        /* --- SUPPORT SECTION --- */
+        .cta {
+            text-align: center;
+            margin-top: 80px;
+            padding-top: 60px;
+            border-top: 1px solid var(--border);
+        }
+
+        .cta p { color: var(--text-secondary); margin-bottom: 20px; font-size: 15px; }
+
+        .discord-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: #fff;
+            color: #000;
+            padding: 14px 30px;
+            border-radius: 100px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        
+        .discord-btn:hover { 
+            transform: translateY(-3px); 
+            box-shadow: 0 10px 20px rgba(255,255,255,0.1); 
+        }
+
+        #toast {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #fff;
+            color: #000;
+            padding: 10px 20px;
+            border-radius: 100px;
+            font-size: 13px;
+            font-weight: 600;
+            opacity: 0;
+            transition: 0.3s;
+            pointer-events: none;
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="top-nav">
+        <div class="nav-pill">
+            <div class="nav-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32l1.41 1.41M2 12h2m16 0h2M4.93 19.07l1.41-1.41m11.32-11.32l1.41-1.41"></path></svg>
+            </div>
+            <div class="nav-divider"></div>
+            <a href="https://percs.fun/bot">Home</a>
+            <a href="#" class="active">Commands</a>
+            <a href="https://percs.fun/bot/faq">FAQ</a>
+            <a href="https://percs.fun/bot/legal">Legal</a>
+        </div>
+    </nav>
+
+    <div class="hero">
+        <h1>Commands <span>Overview</span></h1>
+        <div class="search-wrapper">
+            <input type="text" id="searchInput" class="search-bar" placeholder="Search protocol commands..." onkeyup="processFilter()">
+        </div>
+        <div class="categories" id="catBox"></div>
+    </div>
+
+    <div class="grid" id="cmdGrid"></div>
+
+    <div class="cta">
+        <p>Need custom module assistance?</p>
+        <a href="https://discord.gg/dAHEdfkDzX" class="discord-btn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+            Join Support Server
+        </a>
+    </div>
+
+    <div id="toast">Copied to clipboard</div>
+
+    <script>
+        let cmdData = [];
+        let currentCat = 'All';
+
+        async function init() {
+            try {
+                const res = await fetch('commands.json');
+                cmdData = await res.json();
+                renderCategories();
+                renderCards(cmdData);
+            } catch (e) {
+                document.getElementById('cmdGrid').innerHTML = `<p style="text-align:center; color:red;">[ERROR] commands.json not found.</p>`;
+            }
+        }
+
+        function renderCategories() {
+            const categoryCounts = cmdData.reduce((acc, cmd) => {
+                acc[cmd.category] = (acc[cmd.category] || 0) + 1;
+                return acc;
+            }, {});
+
+            const uniqueCats = [...new Set(cmdData.map(c => c.category))];
+            const container = document.getElementById('catBox');
+            
+            let html = `
+                <div class="cat-pill ${currentCat === 'All' ? 'active' : ''}" onclick="setCategory('All', this)">
+                    All <span>${cmdData.length}</span>
+                </div>
+            `;
+
+            html += uniqueCats.map(cat => `
+                <div class="cat-pill ${cat === currentCat ? 'active' : ''}" onclick="setCategory('${cat}', this)">
+                    ${cat} <span>${categoryCounts[cat]}</span>
+                </div>
+            `).join('');
+
+            container.innerHTML = html;
+        }
+
+        function setCategory(cat, el) {
+            currentCat = cat;
+            document.querySelectorAll('.cat-pill').forEach(p => p.classList.remove('active'));
+            el.classList.add('active');
+            processFilter();
+        }
+
+        function processFilter() {
+            const term = document.getElementById('searchInput').value.toLowerCase();
+            const filtered = cmdData.filter(c => {
+                const matchesSearch = c.name.toLowerCase().includes(term) || c.description.toLowerCase().includes(term);
+                const matchesCat = currentCat === 'All' || c.category === currentCat;
+                return matchesSearch && matchesCat;
+            });
+            renderCards(filtered);
+        }
+
+        function renderCards(data) {
+            const grid = document.getElementById('cmdGrid');
+            grid.innerHTML = data.map(cmd => {
+                let usageStr = cmd.usage;
+                if (!usageStr) {
+                    const prefix = cmd.type === 'prefix' ? '.' : '/';
+                    const args = cmd.arguments && cmd.arguments.length ? ' ' + cmd.arguments.join(' ') : '';
+                    usageStr = `${prefix}${cmd.name}${args}`;
+                }
+
+                const adminBadge = cmd.permission === 'Administrator' 
+                    ? `<span class="admin-badge">Administrator</span>` 
+                    : '';
+
+                return `
+                <div class="card">
+                    <div class="cmd-header">
+                        <span class="cmd-name">${cmd.name}</span>
+                        ${adminBadge}
+                    </div>
+                    <p class="cmd-desc">${cmd.description}</p>
+                    <div class="usage-container" onclick="copyText('${usageStr}')">
+                        <span class="usage-text">Usage: <span style="color:#fff">${usageStr}</span></span>
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#888" stroke-width="2.5"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                    </div>
+                </div>`;
+            }).join('');
+        }
+
+        function copyText(text) {
+            navigator.clipboard.writeText(text);
+            const toast = document.getElementById('toast');
+            toast.style.opacity = '1';
+            setTimeout(() => toast.style.opacity = '0', 2000);
+        }
+
+        init();
+    </script>
+</body>
+</html>
