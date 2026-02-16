@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    
+    <title>PERCS | Faq</title>
+    <meta name="description" content="Frequently asked questions about the PERCS protocol and bot functionality.">
+    <meta name="theme-color" content="#000000">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Plus+Jakarta+Sans:wght@700&family=JetBrains+Mono&display=swap');
+
+        :root {
+            --bg: #000000;
+            --card-bg: #0a0a0a;
+            --card-hover: #121212;
+            --text-primary: #ffffff;
+            --text-secondary: #888888;
+            --border: rgba(255, 255, 255, 0.08);
+            --font-main: 'Inter', sans-serif;
+            --font-heading: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text-primary);
+            font-family: var(--font-main);
+            overflow-x: hidden;
+            background-image: radial-gradient(circle at center, #111 0%, #000 100%);
+            min-height: 100vh;
+            padding: 40px 20px 80px 20px;
+        }
+
+        /* --- UPDATED FLOATING NAV --- */
+        .top-nav {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 60px;
+            position: sticky;
+            top: 20px;
+            z-index: 1000;
+        }
+
+        .nav-pill {
+            display: flex;
+            align-items: center;
+            background: rgba(10, 10, 10, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid var(--border);
+            padding: 5px;
+            border-radius: 100px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .nav-pill a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 600;
+            transition: 0.2s;
+            padding: 8px 20px;
+            border-radius: 100px;
+        }
+
+        .nav-pill a:hover { color: #fff; background: rgba(255,255,255,0.03); }
+        .nav-pill a.active { color: #fff; background: rgba(255,255,255,0.08); }
+
+        .nav-divider { width: 1px; height: 16px; background: var(--border); margin: 0 4px; }
+        .nav-icon { display: flex; align-items: center; padding: 0 12px; }
+
+        /* --- HERO --- */
+        .hero { text-align: center; margin-bottom: 60px; margin-top: 20px; }
+        
+        .hero h1 {
+            font-family: var(--font-heading);
+            font-size: clamp(40px, 8vw, 72px);
+            letter-spacing: -3px;
+            margin-bottom: 10px;
+        }
+
+        .hero h1 span { color: var(--text-secondary); font-weight: 400; }
+        .hero p { color: var(--text-secondary); font-size: 16px; max-width: 600px; margin: 0 auto; line-height: 1.5; }
+
+        /* --- FAQ SECTION --- */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            margin-bottom: 15px;
+            overflow: hidden;
+            transition: 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .faq-item:hover {
+            border-color: rgba(255, 255, 255, 0.15);
+            background: var(--card-hover);
+        }
+
+        .faq-question {
+            padding: 25px 30px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-question h3 {
+            font-family: var(--font-heading);
+            font-size: 18px;
+            color: #fff;
+            letter-spacing: -0.5px;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.4s ease;
+            color: var(--text-secondary);
+            font-size: 15px;
+            line-height: 1.6;
+            padding: 0 30px;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px; 
+            padding-bottom: 30px;
+        }
+
+        .faq-item.active .icon-plus {
+            transform: rotate(45deg);
+        }
+
+        .icon-plus {
+            transition: 0.3s;
+            color: var(--text-secondary);
+        }
+
+        /* --- CONTACT CTA --- */
+        .cta {
+            text-align: center;
+            margin-top: 80px;
+            padding-top: 60px;
+            border-top: 1px solid var(--border);
+        }
+
+        .cta p { color: var(--text-secondary); margin-bottom: 20px; font-size: 15px; }
+
+        .discord-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: #fff;
+            color: #000;
+            padding: 14px 30px;
+            border-radius: 100px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        
+        .discord-btn:hover { 
+            transform: translateY(-3px); 
+            box-shadow: 0 10px 20px rgba(255,255,255,0.1); 
+        }
+
+    </style>
+</head>
+<body>
+
+    <nav class="top-nav">
+        <div class="nav-pill">
+            <div class="nav-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32l1.41 1.41M2 12h2m16 0h2M4.93 19.07l1.41-1.41m11.32-11.32l1.41-1.41"></path></svg>
+            </div>
+            <div class="nav-divider"></div>
+            <a href="https://percs.fun/bot">Home</a>
+            <a href="https://percs.fun/bot/commands">Commands</a>
+            <a href="#" class="active">FAQ</a>
+            <a href="https://percs.fun/bot/legal">Legal</a>
+        </div>
+    </nav>
+
+    <div class="hero">
+        <h1>Bot <span>FAQ</span></h1>
+        <p>Everything you need to know about integrating PERCS into your server environment.</p>
+    </div>
+
+    <div class="faq-container">
+        
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+                <h3>What is the default prefix?</h3>
+                <div class="icon-plus">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                </div>
+            </div>
+            <div class="faq-answer">
+                PERCS uses <code>.</code> as the default prefix for text commands. However, most commands are also available via <code>/</code> slash commands for a more integrated Discord experience.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+                <h3>How do I use the economy system?</h3>
+                <div class="icon-plus">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                </div>
+            </div>
+            <div class="faq-answer">
+                Simply type <code>.work</code> or <code>.daily</code> to begin. You can view your current balance with <code>.bal</code> or check the local rankings with <code>.lb</code>.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+                <h3>Is my data private?</h3>
+                <div class="icon-plus">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                </div>
+            </div>
+            <div class="faq-answer">
+                Yes. PERCS follows a zero-persistence protocol. We do not store message content or private user data beyond what is required for functional features like XP or Economy balances.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question" onclick="toggleFaq(this)">
+                <h3>How do I report a bug?</h3>
+                <div class="icon-plus">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                </div>
+            </div>
+            <div class="faq-answer">
+                The best way to report issues is through our official Discord server. Our development team monitors the support channels 24/7 to resolve critical protocol bugs.
+            </div>
+        </div>
+
+    </div>
+
+    <div class="cta">
+        <p>Still have questions?</p>
+        <a href="https://discord.gg/dAHEdfkDzX" class="discord-btn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+            Join the Discord
+        </a>
+    </div>
+
+    <script>
+        function toggleFaq(element) {
+            const item = element.parentElement;
+            
+            document.querySelectorAll('.faq-item').forEach(el => {
+                if (el !== item) el.classList.remove('active');
+            });
+
+            item.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
