@@ -1,5 +1,18 @@
 [
   {
+    "name": "247",
+    "description": "Toggle 24/7 mode to keep the bot in voice.",
+    "category": "Music",
+    "type": "prefix",
+    "arguments": [],
+    "permissions": [],
+    "aliases": [
+      "24/7",
+      "stay"
+    ],
+    "load_error": false
+  },
+  {
     "name": "add-level-role",
     "description": "Assign a role reward to a specific level.",
     "category": "Level",
@@ -46,6 +59,16 @@
     "load_error": false
   },
   {
+    "name": "ai",
+    "description": "Ask the AI a question.",
+    "category": "AI",
+    "type": "prefix",
+    "arguments": [],
+    "permissions": [],
+    "aliases": [],
+    "load_error": false
+  },
+  {
     "name": "airkiss",
     "description": "Blow an air kiss to someone.",
     "category": "Roleplay",
@@ -69,6 +92,36 @@
     "name": "anime",
     "description": "Search MyAnimeList for anime details and images",
     "category": "Fun",
+    "type": "prefix",
+    "arguments": [],
+    "permissions": [],
+    "aliases": [],
+    "load_error": false
+  },
+  {
+    "name": "antidelete",
+    "description": "Configure message deletion logging.",
+    "category": "AutoMod",
+    "type": "prefix",
+    "arguments": [],
+    "permissions": [],
+    "aliases": [],
+    "load_error": false
+  },
+  {
+    "name": "antidelete",
+    "description": "Configure message deletion logging.",
+    "category": "Moderation",
+    "type": "prefix",
+    "arguments": [],
+    "permissions": [],
+    "aliases": [],
+    "load_error": false
+  },
+  {
+    "name": "antilink",
+    "description": "Configure anti-link module with whitelisting.",
+    "category": "AutoMod",
     "type": "prefix",
     "arguments": [],
     "permissions": [],
@@ -110,6 +163,26 @@
     "load_error": false
   },
   {
+    "name": "antispam",
+    "description": "Configure anti-spam module.",
+    "category": "AutoMod",
+    "type": "prefix",
+    "arguments": [],
+    "permissions": [],
+    "aliases": [],
+    "load_error": false
+  },
+  {
+    "name": "antispam",
+    "description": "Configure anti-spam module.",
+    "category": "Moderation",
+    "type": "prefix",
+    "arguments": [],
+    "permissions": [],
+    "aliases": [],
+    "load_error": false
+  },
+  {
     "name": "api",
     "description": "Manage global security API and Database settings. (Owner Only)",
     "category": "Owner",
@@ -117,6 +190,50 @@
     "arguments": [
       "<offline-db>"
     ],
+    "permissions": [],
+    "aliases": [],
+    "load_error": false
+  },
+  {
+    "name": "assets",
+    "description": "View your owned items and assets.",
+    "category": "Economy",
+    "type": "prefix",
+    "arguments": [],
+    "permissions": [],
+    "aliases": [
+      "inv",
+      "inventory",
+      "bag"
+    ],
+    "load_error": false
+  },
+  {
+    "name": "automod",
+    "description": "Configure the AutoMod system for this server.",
+    "category": "AutoMod",
+    "type": "prefix",
+    "arguments": [],
+    "permissions": [],
+    "aliases": [],
+    "load_error": false
+  },
+  {
+    "name": "automod",
+    "description": "Configure the AutoMod system for this server.",
+    "category": "Moderation",
+    "type": "prefix",
+    "arguments": [],
+    "permissions": [],
+    "aliases": [],
+    "load_error": false
+  },
+  {
+    "name": "automod-setup",
+    "description": "Interactive AutoMod setup wizard.",
+    "category": "AutoMod",
+    "type": "prefix",
+    "arguments": [],
     "permissions": [],
     "aliases": [],
     "load_error": false
@@ -305,6 +422,19 @@
     "load_error": false
   },
   {
+    "name": "cat",
+    "description": "Get a random cat image",
+    "category": "Fun",
+    "type": "prefix",
+    "arguments": [],
+    "permissions": [],
+    "aliases": [
+      "kitty",
+      "meow"
+    ],
+    "load_error": false
+  },
+  {
     "name": "celebrate",
     "description": "Celebrate with someone.",
     "category": "Roleplay",
@@ -367,6 +497,19 @@
     "load_error": false
   },
   {
+    "name": "clearqueue",
+    "description": "Clear the entire song queue.",
+    "category": "Music",
+    "type": "prefix",
+    "arguments": [],
+    "permissions": [],
+    "aliases": [
+      "cq",
+      "qc"
+    ],
+    "load_error": false
+  },
+  {
     "name": "clearsnipe",
     "description": "Clears all deleted messages stored for this channel.",
     "category": "Moderation",
@@ -419,6 +562,16 @@
     "name": "confused",
     "description": "Act confused at someone.",
     "category": "Roleplay",
+    "type": "prefix",
+    "arguments": [],
+    "permissions": [],
+    "aliases": [],
+    "load_error": false
+  },
+  {
+    "name": "cook",
+    "description": "Cook raw animal to create a cooked food item.",
+    "category": "Economy",
     "type": "prefix",
     "arguments": [],
     "permissions": [],
@@ -530,6 +683,18 @@
     "load_error": false
   },
   {
+    "name": "deposit",
+    "description": "Deposit money from your wallet to your bank.",
+    "category": "Economy",
+    "type": "prefix",
+    "arguments": [],
+    "permissions": [],
+    "aliases": [
+      "dep"
+    ],
+    "load_error": false
+  },
+  {
     "name": "disable",
     "description": "Disable or enable commands and categories in this server.",
     "category": "Moderation",
@@ -561,6 +726,20 @@
     "arguments": [],
     "permissions": [],
     "aliases": [],
+    "load_error": false
+  },
+  {
+    "name": "dog",
+    "description": "Get a random dog GIF",
+    "category": "Fun",
+    "type": "prefix",
+    "arguments": [],
+    "permissions": [],
+    "aliases": [
+      "doh",
+      "doggo",
+      "woof"
+    ],
     "load_error": false
   },
   {
@@ -606,6 +785,18 @@
     "aliases": [
       "ddgimage",
       "img"
+    ],
+    "load_error": false
+  },
+  {
+    "name": "editsnipe",
+    "description": "Retrieve recently edited messages.",
+    "category": "Moderation",
+    "type": "prefix",
+    "arguments": [],
+    "permissions": [],
+    "aliases": [
+      "es"
     ],
     "load_error": false
   },
@@ -696,6 +887,55 @@
     "load_error": false
   },
   {
+    "name": "favs",
+    "description": "List your favorited waifus.",
+    "category": "Anime",
+    "type": "prefix",
+    "arguments": [],
+    "permissions": [],
+    "aliases": [
+      "favourites",
+      "favorites",
+      "favs",
+      "favourites"
+    ],
+    "load_error": false
+  },
+  {
+    "name": "favwaifu",
+    "description": "Toggle favorite on a waifu you own. Usage: .favwaifu <id>",
+    "category": "Anime",
+    "type": "prefix",
+    "arguments": [],
+    "permissions": [],
+    "aliases": [
+      "fav",
+      "favorite",
+      "unfav"
+    ],
+    "load_error": false
+  },
+  {
+    "name": "filter",
+    "description": "Manage the word filter blacklist.",
+    "category": "AutoMod",
+    "type": "prefix",
+    "arguments": [],
+    "permissions": [],
+    "aliases": [],
+    "load_error": false
+  },
+  {
+    "name": "filter",
+    "description": "Manage the word filter blacklist.",
+    "category": "Moderation",
+    "type": "prefix",
+    "arguments": [],
+    "permissions": [],
+    "aliases": [],
+    "load_error": false
+  },
+  {
     "name": "firstmessage",
     "description": "Finds and links to the first message ever sent in this channel.",
     "category": "General",
@@ -765,12 +1005,14 @@
   },
   {
     "name": "giphy",
-    "description": "Search Giphy for GIFs",
+    "description": "Search for GIFs",
     "category": "Fun",
     "type": "prefix",
     "arguments": [],
     "permissions": [],
-    "aliases": [],
+    "aliases": [
+      "gif"
+    ],
     "load_error": false
   },
   {
@@ -878,7 +1120,7 @@
   },
   {
     "name": "help",
-    "description": "Advanced help menu with prefix/slash toggle and 25s expiry.",
+    "description": "Help menu with prefix/slash toggle and 25s expiry.",
     "category": "General",
     "type": "prefix",
     "arguments": [],
@@ -917,6 +1159,16 @@
     "name": "hug",
     "description": "Give someone a warm hug!",
     "category": "Family",
+    "type": "prefix",
+    "arguments": [],
+    "permissions": [],
+    "aliases": [],
+    "load_error": false
+  },
+  {
+    "name": "hunt",
+    "description": "Hunt for animals (requires Hunting Rifle).",
+    "category": "Economy",
     "type": "prefix",
     "arguments": [],
     "permissions": [],
@@ -1048,6 +1300,19 @@
     "load_error": false
   },
   {
+    "name": "laptop",
+    "description": "⚠️ Could not load details for this command.",
+    "category": "Economy",
+    "type": "prefix",
+    "arguments": [],
+    "permissions": [],
+    "aliases": [
+      "lp",
+      "postmemes"
+    ],
+    "load_error": false
+  },
+  {
     "name": "laugh",
     "description": "Laugh with someone.",
     "category": "Roleplay",
@@ -1170,6 +1435,17 @@
     "load_error": false
   },
   {
+    "name": "log",
+    "description": "Set up logging for your community.",
+    "category": "Logger",
+    "type": "prefix",
+    "arguments": [],
+    "permissions": [],
+    "aliases": [],
+    "load_error": false,
+    "usage": ".log"
+  },
+  {
     "name": "logs",
     "description": "Search the server's message and audit database.",
     "category": "Utils",
@@ -1192,6 +1468,19 @@
     ],
     "permissions": [],
     "aliases": [],
+    "load_error": false
+  },
+  {
+    "name": "loop",
+    "description": "Toggle loop mode (off, track, queue).",
+    "category": "Music",
+    "type": "prefix",
+    "arguments": [],
+    "permissions": [],
+    "aliases": [
+      "inf",
+      "repeat"
+    ],
     "load_error": false
   },
   {
@@ -1260,6 +1549,16 @@
     "load_error": false
   },
   {
+    "name": "meme",
+    "description": "Get a random meme",
+    "category": "Fun",
+    "type": "prefix",
+    "arguments": [],
+    "permissions": [],
+    "aliases": [],
+    "load_error": false
+  },
+  {
     "name": "meow",
     "description": "Meows at someone.",
     "category": "Roleplay",
@@ -1299,6 +1598,18 @@
     "aliases": [
       "ms",
       "mstats"
+    ],
+    "load_error": false
+  },
+  {
+    "name": "move",
+    "description": "Move a track to a different position in the queue.",
+    "category": "Music",
+    "type": "prefix",
+    "arguments": [],
+    "permissions": [],
+    "aliases": [
+      "mv"
     ],
     "load_error": false
   },
@@ -1376,6 +1687,18 @@
     "load_error": false
   },
   {
+    "name": "nowplaying",
+    "description": "Show the currently playing track.",
+    "category": "Music",
+    "type": "prefix",
+    "arguments": [],
+    "permissions": [],
+    "aliases": [
+      "np"
+    ],
+    "load_error": false
+  },
+  {
     "name": "nuke",
     "description": "Deletes and clones a channel to clear its history.",
     "category": "Moderation",
@@ -1426,6 +1749,16 @@
     "load_error": false
   },
   {
+    "name": "owner",
+    "description": "Manage the AI system. (Dev only)",
+    "category": "AI",
+    "type": "prefix",
+    "arguments": [],
+    "permissions": [],
+    "aliases": [],
+    "load_error": false
+  },
+  {
     "name": "parents",
     "description": "View your parents or another user's parents.",
     "category": "Family",
@@ -1443,6 +1776,31 @@
     "arguments": [],
     "permissions": [],
     "aliases": [],
+    "load_error": false
+  },
+  {
+    "name": "pause",
+    "description": "Pause the current playback.",
+    "category": "Music",
+    "type": "prefix",
+    "arguments": [],
+    "permissions": [],
+    "aliases": [
+      "pa"
+    ],
+    "load_error": false
+  },
+  {
+    "name": "pbattle",
+    "description": "⚠️ Could not load details for this command.",
+    "category": "Anime",
+    "type": "prefix",
+    "arguments": [],
+    "permissions": [],
+    "aliases": [
+      "duel",
+      "pvp"
+    ],
     "load_error": false
   },
   {
@@ -1486,6 +1844,18 @@
     "arguments": [],
     "permissions": [],
     "aliases": [],
+    "load_error": false
+  },
+  {
+    "name": "play",
+    "description": "Play a song from a given query or URL.",
+    "category": "Music",
+    "type": "prefix",
+    "arguments": [],
+    "permissions": [],
+    "aliases": [
+      "p"
+    ],
     "load_error": false
   },
   {
@@ -1533,6 +1903,19 @@
     "load_error": false
   },
   {
+    "name": "previewsell",
+    "description": "Preview how much a waifu would sell for without selling.",
+    "category": "Anime",
+    "type": "prefix",
+    "arguments": [],
+    "permissions": [],
+    "aliases": [
+      "psell",
+      "sellpreview"
+    ],
+    "load_error": false
+  },
+  {
     "name": "profile",
     "description": "⚠️ Could not load details for this command.",
     "category": "Economy",
@@ -1569,6 +1952,18 @@
     "load_error": false
   },
   {
+    "name": "queue",
+    "description": "Display the current song queue.",
+    "category": "Music",
+    "type": "prefix",
+    "arguments": [],
+    "permissions": [],
+    "aliases": [
+      "q"
+    ],
+    "load_error": false
+  },
+  {
     "name": "rank",
     "description": "⚠️ Could not load details for this command.",
     "category": "Level",
@@ -1594,9 +1989,31 @@
     "load_error": false
   },
   {
+    "name": "reactionsnipe",
+    "description": "Retrieve recently removed reactions.",
+    "category": "Moderation",
+    "type": "prefix",
+    "arguments": [],
+    "permissions": [],
+    "aliases": [
+      "rs"
+    ],
+    "load_error": false
+  },
+  {
     "name": "reason",
     "description": "⚠️ Could not load details for this command.",
     "category": "Moderation",
+    "type": "prefix",
+    "arguments": [],
+    "permissions": [],
+    "aliases": [],
+    "load_error": false
+  },
+  {
+    "name": "redeem",
+    "description": "Redeem a premium or bonus key.",
+    "category": "AI",
     "type": "prefix",
     "arguments": [],
     "permissions": [],
@@ -1611,6 +2028,19 @@
     "arguments": [],
     "permissions": [],
     "aliases": [],
+    "load_error": false
+  },
+  {
+    "name": "remove",
+    "description": "Remove a track from the queue by position.",
+    "category": "Music",
+    "type": "prefix",
+    "arguments": [],
+    "permissions": [],
+    "aliases": [
+      "rm",
+      "delete"
+    ],
     "load_error": false
   },
   {
@@ -1632,6 +2062,19 @@
     "permissions": [],
     "aliases": [
       "rc"
+    ],
+    "load_error": false
+  },
+  {
+    "name": "resume",
+    "description": "Resume the paused playback.",
+    "category": "Music",
+    "type": "prefix",
+    "arguments": [],
+    "permissions": [],
+    "aliases": [
+      "r",
+      "res"
     ],
     "load_error": false
   },
@@ -1717,6 +2160,16 @@
     "load_error": false
   },
   {
+    "name": "roles",
+    "description": "Lists all roles in the server from highest to lowest position.",
+    "category": "Moderation",
+    "type": "prefix",
+    "arguments": [],
+    "permissions": [],
+    "aliases": [],
+    "load_error": false
+  },
+  {
     "name": "roll",
     "description": "⚠️ Could not load details for this command.",
     "category": "Anime",
@@ -1726,6 +2179,18 @@
     "aliases": [
       "waifu",
       "w"
+    ],
+    "load_error": false
+  },
+  {
+    "name": "roulette",
+    "description": "⚠️ Could not load details for this command.",
+    "category": "Economy",
+    "type": "prefix",
+    "arguments": [],
+    "permissions": [],
+    "aliases": [
+      "rlt"
     ],
     "load_error": false
   },
@@ -1778,6 +2243,18 @@
     "permissions": [],
     "aliases": [
       "scram"
+    ],
+    "load_error": false
+  },
+  {
+    "name": "sellwaifu",
+    "description": "Sell a waifu by DB id. Usage: .sellwaifu <id>",
+    "category": "Anime",
+    "type": "prefix",
+    "arguments": [],
+    "permissions": [],
+    "aliases": [
+      "sell"
     ],
     "load_error": false
   },
@@ -1868,6 +2345,19 @@
     "load_error": false
   },
   {
+    "name": "shuffle",
+    "description": "Shuffle the current queue.",
+    "category": "Music",
+    "type": "prefix",
+    "arguments": [],
+    "permissions": [],
+    "aliases": [
+      "sh",
+      "mix"
+    ],
+    "load_error": false
+  },
+  {
     "name": "shy",
     "description": "Get shy around someone.",
     "category": "Roleplay",
@@ -1905,6 +2395,19 @@
     "arguments": [],
     "permissions": [],
     "aliases": [],
+    "load_error": false
+  },
+  {
+    "name": "skip",
+    "description": "Skip the current track.",
+    "category": "Music",
+    "type": "prefix",
+    "arguments": [],
+    "permissions": [],
+    "aliases": [
+      "sagf23",
+      "next"
+    ],
     "load_error": false
   },
   {
@@ -2067,6 +2570,19 @@
     "permissions": [],
     "aliases": [
       "sticky"
+    ],
+    "load_error": false
+  },
+  {
+    "name": "stop",
+    "description": "Stop playback and clear the queue.",
+    "category": "Music",
+    "type": "prefix",
+    "arguments": [],
+    "permissions": [],
+    "aliases": [
+      "st",
+      "leave"
     ],
     "load_error": false
   },
@@ -2239,6 +2755,20 @@
     "load_error": false
   },
   {
+    "name": "trash",
+    "description": "Put items into the trash (remove from your inventory). Usage: .trash <itemName> [amount|all]",
+    "category": "Economy",
+    "type": "prefix",
+    "arguments": [],
+    "permissions": [],
+    "aliases": [
+      "bin",
+      "discard",
+      "drop"
+    ],
+    "load_error": false
+  },
+  {
     "name": "tree",
     "description": "View the massive visual family tree of a user.",
     "category": "Family",
@@ -2303,6 +2833,18 @@
     "arguments": [],
     "permissions": [],
     "aliases": [],
+    "load_error": false
+  },
+  {
+    "name": "unfav",
+    "description": "Unfavorite a waifu you own. Usage: .unfav <id>",
+    "category": "Anime",
+    "type": "prefix",
+    "arguments": [],
+    "permissions": [],
+    "aliases": [
+      "unfavorite"
+    ],
     "load_error": false
   },
   {
@@ -2434,6 +2976,19 @@
     "load_error": false
   },
   {
+    "name": "volume",
+    "description": "Set the playback volume (1-100).",
+    "category": "Music",
+    "type": "prefix",
+    "arguments": [],
+    "permissions": [],
+    "aliases": [
+      "v",
+      "vol"
+    ],
+    "load_error": false
+  },
+  {
     "name": "vouch",
     "description": "Give a vouch to a user to build their reputation.",
     "category": "Utils",
@@ -2467,9 +3022,8 @@
     "arguments": [],
     "permissions": [],
     "aliases": [
-      "inv",
       "harem",
-      "inventory"
+      "baddies"
     ],
     "load_error": false
   },
@@ -2568,6 +3122,18 @@
     "arguments": [],
     "permissions": [],
     "aliases": [],
+    "load_error": false
+  },
+  {
+    "name": "withdraw",
+    "description": "Withdraw money from your bank to your wallet.",
+    "category": "Economy",
+    "type": "prefix",
+    "arguments": [],
+    "permissions": [],
+    "aliases": [
+      "with"
+    ],
     "load_error": false
   },
   {
