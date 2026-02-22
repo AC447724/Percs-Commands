@@ -120,7 +120,7 @@
   },
   {
     "name": "antilink",
-    "description": "Configure anti-link module with whitelisting.",
+    "description": "Advanced link filtering with domain whitelisting and punishment escalation.",
     "category": "AutoMod",
     "type": "prefix",
     "arguments": [],
@@ -130,8 +130,8 @@
   },
   {
     "name": "antilink",
-    "description": "Advanced link filtering with domain whitelisting and punishment escalation.",
-    "category": "Security",
+    "description": "Configure anti-link module with whitelisting.",
+    "category": "AutoMod",
     "type": "prefix",
     "arguments": [],
     "permissions": [],
@@ -141,7 +141,7 @@
   {
     "name": "antinuke",
     "description": "Comprehensive server protection system.",
-    "category": "Security",
+    "category": "AutoMod",
     "type": "prefix",
     "arguments": [],
     "permissions": [],
@@ -153,7 +153,7 @@
   {
     "name": "antiraid",
     "description": "Comprehensive anti-raid protection system.",
-    "category": "Security",
+    "category": "AutoMod",
     "type": "prefix",
     "arguments": [],
     "permissions": [],
@@ -178,18 +178,6 @@
     "category": "Moderation",
     "type": "prefix",
     "arguments": [],
-    "permissions": [],
-    "aliases": [],
-    "load_error": false
-  },
-  {
-    "name": "api",
-    "description": "Manage global security API and Database settings. (Owner Only)",
-    "category": "Owner",
-    "type": "slash",
-    "arguments": [
-      "<offline-db>"
-    ],
     "permissions": [],
     "aliases": [],
     "load_error": false
@@ -293,6 +281,19 @@
     "load_error": false
   },
   {
+    "name": "baccarat",
+    "description": "⚠️ Could not load details for this command.",
+    "category": "Economy",
+    "type": "prefix",
+    "arguments": [],
+    "permissions": [],
+    "aliases": [
+      "bacc",
+      "playerbanker"
+    ],
+    "load_error": false
+  },
+  {
     "name": "balance",
     "description": "⚠️ Could not load details for this command.",
     "category": "Economy",
@@ -360,6 +361,16 @@
     "name": "blunt",
     "description": "Elite persistent blunt session with automatic schema fixing.",
     "category": "Fun",
+    "type": "prefix",
+    "arguments": [],
+    "permissions": [],
+    "aliases": [],
+    "load_error": false
+  },
+  {
+    "name": "bonus",
+    "description": "⚠️ Could not load details for this command.",
+    "category": "Economy",
     "type": "prefix",
     "arguments": [],
     "permissions": [],
@@ -691,6 +702,19 @@
     "permissions": [],
     "aliases": [
       "dep"
+    ],
+    "load_error": false
+  },
+  {
+    "name": "dice",
+    "description": "⚠️ Could not load details for this command.",
+    "category": "Economy",
+    "type": "prefix",
+    "arguments": [],
+    "permissions": [],
+    "aliases": [
+      "roll_dice",
+      "rolldice"
     ],
     "load_error": false
   },
@@ -1142,6 +1166,19 @@
     "load_error": false
   },
   {
+    "name": "higherlow",
+    "description": "⚠️ Could not load details for this command.",
+    "category": "Economy",
+    "type": "prefix",
+    "arguments": [],
+    "permissions": [],
+    "aliases": [
+      "hilo",
+      "cardgame"
+    ],
+    "load_error": false
+  },
+  {
     "name": "history",
     "description": "View and manage moderation history",
     "category": "Moderation",
@@ -1280,6 +1317,19 @@
     "load_error": false
   },
   {
+    "name": "keno",
+    "description": "⚠️ Could not load details for this command.",
+    "category": "Economy",
+    "type": "prefix",
+    "arguments": [],
+    "permissions": [],
+    "aliases": [
+      "numbers",
+      "pick"
+    ],
+    "load_error": false
+  },
+  {
     "name": "kick",
     "description": "Kick a member from the server by mention, ID, or partial name.",
     "category": "Moderation",
@@ -1408,6 +1458,18 @@
     "arguments": [],
     "permissions": [],
     "aliases": [],
+    "load_error": false
+  },
+  {
+    "name": "limbo",
+    "description": "⚠️ Could not load details for this command.",
+    "category": "Economy",
+    "type": "prefix",
+    "arguments": [],
+    "permissions": [],
+    "aliases": [
+      "multpredict"
+    ],
     "load_error": false
   },
   {
@@ -2247,6 +2309,19 @@
     "load_error": false
   },
   {
+    "name": "scratch",
+    "description": "⚠️ Could not load details for this command.",
+    "category": "Economy",
+    "type": "prefix",
+    "arguments": [],
+    "permissions": [],
+    "aliases": [
+      "scratchticket",
+      "ticket"
+    ],
+    "load_error": false
+  },
+  {
     "name": "sellwaifu",
     "description": "Sell a waifu by DB id. Usage: .sellwaifu <id>",
     "category": "Anime",
@@ -2269,16 +2344,6 @@
       "si",
       "server"
     ],
-    "load_error": false
-  },
-  {
-    "name": "setbal",
-    "description": "⚠️ Could not load details for this command.",
-    "category": "Anime",
-    "type": "prefix",
-    "arguments": [],
-    "permissions": [],
-    "aliases": [],
     "load_error": false
   },
   {
@@ -2428,6 +2493,19 @@
     "arguments": [],
     "permissions": [],
     "aliases": [],
+    "load_error": false
+  },
+  {
+    "name": "slots",
+    "description": "⚠️ Could not load details for this command.",
+    "category": "Economy",
+    "type": "prefix",
+    "arguments": [],
+    "permissions": [],
+    "aliases": [
+      "slot",
+      "slotmachine"
+    ],
     "load_error": false
   },
   {
@@ -3084,6 +3162,18 @@
     ],
     "permissions": [],
     "aliases": [],
+    "load_error": false
+  },
+  {
+    "name": "wheel",
+    "description": "⚠️ Could not load details for this command.",
+    "category": "Economy",
+    "type": "prefix",
+    "arguments": [],
+    "permissions": [],
+    "aliases": [
+      "spinwheel"
+    ],
     "load_error": false
   },
   {
