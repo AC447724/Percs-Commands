@@ -1,5 +1,18 @@
 [
   {
+    "name": "247",
+    "description": "Toggle 24/7 mode to keep the bot in voice.",
+    "category": "Music",
+    "type": "prefix",
+    "arguments": [],
+    "permissions": [],
+    "aliases": [
+      "24/7",
+      "stay"
+    ],
+    "load_error": false
+  },
+  {
     "name": "add-level-role",
     "description": "Assign a role reward to a specific level.",
     "category": "Level",
@@ -8,6 +21,16 @@
       "<level>",
       "<role>"
     ],
+    "permissions": [],
+    "aliases": [],
+    "load_error": false
+  },
+  {
+    "name": "adopt",
+    "description": "Adopt another user as your child.",
+    "category": "Family",
+    "type": "prefix",
+    "arguments": [],
     "permissions": [],
     "aliases": [],
     "load_error": false
@@ -31,6 +54,16 @@
     "arguments": [
       "[reason]"
     ],
+    "permissions": [],
+    "aliases": [],
+    "load_error": false
+  },
+  {
+    "name": "ai",
+    "description": "Ask the AI a question.",
+    "category": "AI",
+    "type": "prefix",
+    "arguments": [],
     "permissions": [],
     "aliases": [],
     "load_error": false
@@ -66,9 +99,39 @@
     "load_error": false
   },
   {
+    "name": "antidelete",
+    "description": "Configure message deletion logging.",
+    "category": "AutoMod",
+    "type": "prefix",
+    "arguments": [],
+    "permissions": [],
+    "aliases": [],
+    "load_error": false
+  },
+  {
+    "name": "antidelete",
+    "description": "Configure message deletion logging.",
+    "category": "Moderation",
+    "type": "prefix",
+    "arguments": [],
+    "permissions": [],
+    "aliases": [],
+    "load_error": false
+  },
+  {
     "name": "antilink",
     "description": "Advanced link filtering with domain whitelisting and punishment escalation.",
-    "category": "Security",
+    "category": "AutoMod",
+    "type": "prefix",
+    "arguments": [],
+    "permissions": [],
+    "aliases": [],
+    "load_error": false
+  },
+  {
+    "name": "antilink",
+    "description": "Configure anti-link module with whitelisting.",
+    "category": "AutoMod",
     "type": "prefix",
     "arguments": [],
     "permissions": [],
@@ -78,7 +141,7 @@
   {
     "name": "antinuke",
     "description": "Comprehensive server protection system.",
-    "category": "Security",
+    "category": "AutoMod",
     "type": "prefix",
     "arguments": [],
     "permissions": [],
@@ -90,7 +153,7 @@
   {
     "name": "antiraid",
     "description": "Comprehensive anti-raid protection system.",
-    "category": "Security",
+    "category": "AutoMod",
     "type": "prefix",
     "arguments": [],
     "permissions": [],
@@ -100,13 +163,65 @@
     "load_error": false
   },
   {
-    "name": "api",
-    "description": "Manage global security API and Database settings. (Owner Only)",
-    "category": "Owner",
-    "type": "slash",
-    "arguments": [
-      "<offline-db>"
+    "name": "antispam",
+    "description": "Configure anti-spam module.",
+    "category": "AutoMod",
+    "type": "prefix",
+    "arguments": [],
+    "permissions": [],
+    "aliases": [],
+    "load_error": false
+  },
+  {
+    "name": "antispam",
+    "description": "Configure anti-spam module.",
+    "category": "Moderation",
+    "type": "prefix",
+    "arguments": [],
+    "permissions": [],
+    "aliases": [],
+    "load_error": false
+  },
+  {
+    "name": "assets",
+    "description": "View your owned items and assets.",
+    "category": "Economy",
+    "type": "prefix",
+    "arguments": [],
+    "permissions": [],
+    "aliases": [
+      "inv",
+      "inventory",
+      "bag"
     ],
+    "load_error": false
+  },
+  {
+    "name": "automod",
+    "description": "Configure the AutoMod system for this server.",
+    "category": "AutoMod",
+    "type": "prefix",
+    "arguments": [],
+    "permissions": [],
+    "aliases": [],
+    "load_error": false
+  },
+  {
+    "name": "automod",
+    "description": "Configure the AutoMod system for this server.",
+    "category": "Moderation",
+    "type": "prefix",
+    "arguments": [],
+    "permissions": [],
+    "aliases": [],
+    "load_error": false
+  },
+  {
+    "name": "automod-setup",
+    "description": "Interactive AutoMod setup wizard.",
+    "category": "AutoMod",
+    "type": "prefix",
+    "arguments": [],
     "permissions": [],
     "aliases": [],
     "load_error": false
@@ -166,6 +281,19 @@
     "load_error": false
   },
   {
+    "name": "baccarat",
+    "description": "⚠️ Could not load details for this command.",
+    "category": "Economy",
+    "type": "prefix",
+    "arguments": [],
+    "permissions": [],
+    "aliases": [
+      "bacc",
+      "playerbanker"
+    ],
+    "load_error": false
+  },
+  {
     "name": "balance",
     "description": "⚠️ Could not load details for this command.",
     "category": "Economy",
@@ -220,8 +348,18 @@
     "load_error": false
   },
   {
-    "name": "blacktea",
-    "description": "Mudae-style word game with Solo and Multi-player modes",
+    "name": "bleh",
+    "description": "Bleh at someone.",
+    "category": "Roleplay",
+    "type": "prefix",
+    "arguments": [],
+    "permissions": [],
+    "aliases": [],
+    "load_error": false
+  },
+  {
+    "name": "blunt",
+    "description": "Elite persistent blunt session with automatic schema fixing.",
     "category": "Fun",
     "type": "prefix",
     "arguments": [],
@@ -230,9 +368,9 @@
     "load_error": false
   },
   {
-    "name": "bleh",
-    "description": "Bleh at someone.",
-    "category": "Roleplay",
+    "name": "bonus",
+    "description": "⚠️ Could not load details for this command.",
+    "category": "Economy",
     "type": "prefix",
     "arguments": [],
     "permissions": [],
@@ -295,6 +433,19 @@
     "load_error": false
   },
   {
+    "name": "cat",
+    "description": "Get a random cat image",
+    "category": "Fun",
+    "type": "prefix",
+    "arguments": [],
+    "permissions": [],
+    "aliases": [
+      "kitty",
+      "meow"
+    ],
+    "load_error": false
+  },
+  {
     "name": "celebrate",
     "description": "Celebrate with someone.",
     "category": "Roleplay",
@@ -302,6 +453,18 @@
     "arguments": [],
     "permissions": [],
     "aliases": [],
+    "load_error": false
+  },
+  {
+    "name": "channel",
+    "description": "Advanced channel and category management.",
+    "category": "Moderation",
+    "type": "prefix",
+    "arguments": [],
+    "permissions": [],
+    "aliases": [
+      "c"
+    ],
     "load_error": false
   },
   {
@@ -325,6 +488,16 @@
     "load_error": false
   },
   {
+    "name": "children",
+    "description": "View your children or another user's children.",
+    "category": "Family",
+    "type": "prefix",
+    "arguments": [],
+    "permissions": [],
+    "aliases": [],
+    "load_error": false
+  },
+  {
     "name": "clap",
     "description": "Clap at someone.",
     "category": "Roleplay",
@@ -332,6 +505,19 @@
     "arguments": [],
     "permissions": [],
     "aliases": [],
+    "load_error": false
+  },
+  {
+    "name": "clearqueue",
+    "description": "Clear the entire song queue.",
+    "category": "Music",
+    "type": "prefix",
+    "arguments": [],
+    "permissions": [],
+    "aliases": [
+      "cq",
+      "qc"
+    ],
     "load_error": false
   },
   {
@@ -367,7 +553,7 @@
     "arguments": [],
     "permissions": [],
     "aliases": [
-      "cf"
+      "cfight"
     ],
     "load_error": false
   },
@@ -394,9 +580,29 @@
     "load_error": false
   },
   {
+    "name": "cook",
+    "description": "Cook raw animal to create a cooked food item.",
+    "category": "Economy",
+    "type": "prefix",
+    "arguments": [],
+    "permissions": [],
+    "aliases": [],
+    "load_error": false
+  },
+  {
     "name": "cool",
     "description": "Be cool with someone.",
     "category": "Roleplay",
+    "type": "prefix",
+    "arguments": [],
+    "permissions": [],
+    "aliases": [],
+    "load_error": false
+  },
+  {
+    "name": "counter",
+    "description": "Manage server statistic counters on channels.",
+    "category": "Moderation",
     "type": "prefix",
     "arguments": [],
     "permissions": [],
@@ -488,6 +694,79 @@
     "load_error": false
   },
   {
+    "name": "deposit",
+    "description": "Deposit money from your wallet to your bank.",
+    "category": "Economy",
+    "type": "prefix",
+    "arguments": [],
+    "permissions": [],
+    "aliases": [
+      "dep"
+    ],
+    "load_error": false
+  },
+  {
+    "name": "dice",
+    "description": "⚠️ Could not load details for this command.",
+    "category": "Economy",
+    "type": "prefix",
+    "arguments": [],
+    "permissions": [],
+    "aliases": [
+      "roll_dice",
+      "rolldice"
+    ],
+    "load_error": false
+  },
+  {
+    "name": "disable",
+    "description": "Disable or enable commands and categories in this server.",
+    "category": "Moderation",
+    "type": "prefix",
+    "arguments": [],
+    "permissions": [],
+    "aliases": [
+      "enable",
+      "cmd",
+      "command"
+    ],
+    "load_error": false
+  },
+  {
+    "name": "disown",
+    "description": "Disown an adopted child.",
+    "category": "Family",
+    "type": "prefix",
+    "arguments": [],
+    "permissions": [],
+    "aliases": [],
+    "load_error": false
+  },
+  {
+    "name": "divorce",
+    "description": "Divorce your current spouse.",
+    "category": "Family",
+    "type": "prefix",
+    "arguments": [],
+    "permissions": [],
+    "aliases": [],
+    "load_error": false
+  },
+  {
+    "name": "dog",
+    "description": "Get a random dog GIF",
+    "category": "Fun",
+    "type": "prefix",
+    "arguments": [],
+    "permissions": [],
+    "aliases": [
+      "doh",
+      "doggo",
+      "woof"
+    ],
+    "load_error": false
+  },
+  {
     "name": "drag",
     "description": "Drags a member or members to your voice channel.",
     "category": "Moderation",
@@ -534,6 +813,32 @@
     "load_error": false
   },
   {
+    "name": "editsnipe",
+    "description": "Retrieve recently edited messages.",
+    "category": "Moderation",
+    "type": "prefix",
+    "arguments": [],
+    "permissions": [],
+    "aliases": [
+      "es"
+    ],
+    "load_error": false
+  },
+  {
+    "name": "embed",
+    "description": "Send a custom embed to a channel.",
+    "category": "Utils",
+    "type": "prefix",
+    "arguments": [],
+    "permissions": [],
+    "aliases": [
+      "say",
+      "announce",
+      "echo"
+    ],
+    "load_error": false
+  },
+  {
     "name": "embed",
     "description": "Create, view, edit, list, delete, and send custom embeds!",
     "category": "Utils",
@@ -576,6 +881,78 @@
     "name": "facepalm",
     "description": "Facepalm at someone.",
     "category": "Roleplay",
+    "type": "prefix",
+    "arguments": [],
+    "permissions": [],
+    "aliases": [],
+    "load_error": false
+  },
+  {
+    "name": "fakedm",
+    "description": "Generates a fake DM image from a user.",
+    "category": "Admin",
+    "type": "slash",
+    "arguments": [
+      "<user>",
+      "<message>"
+    ],
+    "permissions": [],
+    "aliases": [],
+    "load_error": false
+  },
+  {
+    "name": "family",
+    "description": "View your family or someone else's family.",
+    "category": "Family",
+    "type": "prefix",
+    "arguments": [],
+    "permissions": [],
+    "aliases": [],
+    "load_error": false
+  },
+  {
+    "name": "favs",
+    "description": "List your favorited waifus.",
+    "category": "Anime",
+    "type": "prefix",
+    "arguments": [],
+    "permissions": [],
+    "aliases": [
+      "favourites",
+      "favorites",
+      "favs",
+      "favourites"
+    ],
+    "load_error": false
+  },
+  {
+    "name": "favwaifu",
+    "description": "Toggle favorite on a waifu you own. Usage: .favwaifu <id>",
+    "category": "Anime",
+    "type": "prefix",
+    "arguments": [],
+    "permissions": [],
+    "aliases": [
+      "fav",
+      "favorite",
+      "unfav"
+    ],
+    "load_error": false
+  },
+  {
+    "name": "filter",
+    "description": "Manage the word filter blacklist.",
+    "category": "AutoMod",
+    "type": "prefix",
+    "arguments": [],
+    "permissions": [],
+    "aliases": [],
+    "load_error": false
+  },
+  {
+    "name": "filter",
+    "description": "Manage the word filter blacklist.",
+    "category": "Moderation",
     "type": "prefix",
     "arguments": [],
     "permissions": [],
@@ -652,12 +1029,14 @@
   },
   {
     "name": "giphy",
-    "description": "Search Giphy for GIFs",
+    "description": "Search for GIFs",
     "category": "Fun",
     "type": "prefix",
     "arguments": [],
     "permissions": [],
-    "aliases": [],
+    "aliases": [
+      "gif"
+    ],
     "load_error": false
   },
   {
@@ -676,7 +1055,7 @@
   },
   {
     "name": "google",
-    "description": "Search Google with interactive results",
+    "description": "Search Google using Serper.dev",
     "category": "Fun",
     "type": "prefix",
     "arguments": [],
@@ -685,6 +1064,16 @@
       "g",
       "search"
     ],
+    "load_error": false
+  },
+  {
+    "name": "grandparents",
+    "description": "View your grandparents or another user's grandparents.",
+    "category": "Family",
+    "type": "prefix",
+    "arguments": [],
+    "permissions": [],
+    "aliases": [],
     "load_error": false
   },
   {
@@ -755,7 +1144,7 @@
   },
   {
     "name": "help",
-    "description": "Advanced help menu with prefix/slash toggle and 25s expiry.",
+    "description": "Help menu with prefix/slash toggle and 25s expiry.",
     "category": "General",
     "type": "prefix",
     "arguments": [],
@@ -777,6 +1166,19 @@
     "load_error": false
   },
   {
+    "name": "higherlow",
+    "description": "⚠️ Could not load details for this command.",
+    "category": "Economy",
+    "type": "prefix",
+    "arguments": [],
+    "permissions": [],
+    "aliases": [
+      "hilo",
+      "cardgame"
+    ],
+    "load_error": false
+  },
+  {
     "name": "history",
     "description": "View and manage moderation history",
     "category": "Moderation",
@@ -792,8 +1194,18 @@
   },
   {
     "name": "hug",
-    "description": "Hug someone.",
-    "category": "Roleplay",
+    "description": "Give someone a warm hug!",
+    "category": "Family",
+    "type": "prefix",
+    "arguments": [],
+    "permissions": [],
+    "aliases": [],
+    "load_error": false
+  },
+  {
+    "name": "hunt",
+    "description": "Hunt for animals (requires Hunting Rifle).",
+    "category": "Economy",
     "type": "prefix",
     "arguments": [],
     "permissions": [],
@@ -809,7 +1221,8 @@
     "permissions": [],
     "aliases": [
       "gimage",
-      "googleimage"
+      "googleimage",
+      "img"
     ],
     "load_error": false
   },
@@ -839,6 +1252,16 @@
     "load_error": false
   },
   {
+    "name": "inrole",
+    "description": "List users who have a specific role with pagination.",
+    "category": "General",
+    "type": "prefix",
+    "arguments": [],
+    "permissions": [],
+    "aliases": [],
+    "load_error": false
+  },
+  {
     "name": "invites",
     "description": "Show a user's invite stats (joins, leaves, fake, etc).",
     "category": "Utils",
@@ -852,7 +1275,7 @@
   },
   {
     "name": "iunmute",
-    "description": "⚠️ Could not load details for this command.",
+    "description": "Restores multimedia permissions for a member.",
     "category": "Moderation",
     "type": "prefix",
     "arguments": [],
@@ -862,7 +1285,7 @@
   },
   {
     "name": "jail",
-    "description": "Jail a member by mention, ID, or partial name.",
+    "description": "Jail a member, block channel access, and notify them via DM.",
     "category": "Moderation",
     "type": "prefix",
     "arguments": [],
@@ -894,6 +1317,19 @@
     "load_error": false
   },
   {
+    "name": "keno",
+    "description": "⚠️ Could not load details for this command.",
+    "category": "Economy",
+    "type": "prefix",
+    "arguments": [],
+    "permissions": [],
+    "aliases": [
+      "numbers",
+      "pick"
+    ],
+    "load_error": false
+  },
+  {
     "name": "kick",
     "description": "Kick a member from the server by mention, ID, or partial name.",
     "category": "Moderation",
@@ -905,12 +1341,25 @@
   },
   {
     "name": "kiss",
-    "description": "Kiss someone.",
-    "category": "Roleplay",
+    "description": "Kiss someone!",
+    "category": "Family",
     "type": "prefix",
     "arguments": [],
     "permissions": [],
     "aliases": [],
+    "load_error": false
+  },
+  {
+    "name": "laptop",
+    "description": "⚠️ Could not load details for this command.",
+    "category": "Economy",
+    "type": "prefix",
+    "arguments": [],
+    "permissions": [],
+    "aliases": [
+      "lp",
+      "postmemes"
+    ],
     "load_error": false
   },
   {
@@ -939,12 +1388,14 @@
   },
   {
     "name": "leave",
-    "description": "Configure the server's leave messages.",
+    "description": "Configure advanced exit protocols.",
     "category": "Setup",
     "type": "slash",
     "arguments": [
-      "[set]",
-      "[disable]",
+      "[set-channel]",
+      "[msg]",
+      "[embed]",
+      "[toggle]",
       "[status]"
     ],
     "permissions": [],
@@ -1010,6 +1461,18 @@
     "load_error": false
   },
   {
+    "name": "limbo",
+    "description": "⚠️ Could not load details for this command.",
+    "category": "Economy",
+    "type": "prefix",
+    "arguments": [],
+    "permissions": [],
+    "aliases": [
+      "multpredict"
+    ],
+    "load_error": false
+  },
+  {
     "name": "lock",
     "description": "Locks a channel to prevent users from sending messages.",
     "category": "Moderation",
@@ -1034,6 +1497,17 @@
     "load_error": false
   },
   {
+    "name": "log",
+    "description": "Set up logging for your community.",
+    "category": "Logger",
+    "type": "prefix",
+    "arguments": [],
+    "permissions": [],
+    "aliases": [],
+    "load_error": false,
+    "usage": ".log"
+  },
+  {
     "name": "logs",
     "description": "Search the server's message and audit database.",
     "category": "Utils",
@@ -1056,6 +1530,19 @@
     ],
     "permissions": [],
     "aliases": [],
+    "load_error": false
+  },
+  {
+    "name": "loop",
+    "description": "Toggle loop mode (off, track, queue).",
+    "category": "Music",
+    "type": "prefix",
+    "arguments": [],
+    "permissions": [],
+    "aliases": [
+      "inf",
+      "repeat"
+    ],
     "load_error": false
   },
   {
@@ -1114,6 +1601,26 @@
     "load_error": false
   },
   {
+    "name": "marry",
+    "description": "Propose to another user.",
+    "category": "Family",
+    "type": "prefix",
+    "arguments": [],
+    "permissions": [],
+    "aliases": [],
+    "load_error": false
+  },
+  {
+    "name": "meme",
+    "description": "Get a random meme",
+    "category": "Fun",
+    "type": "prefix",
+    "arguments": [],
+    "permissions": [],
+    "aliases": [],
+    "load_error": false
+  },
+  {
     "name": "meow",
     "description": "Meows at someone.",
     "category": "Roleplay",
@@ -1153,6 +1660,18 @@
     "aliases": [
       "ms",
       "mstats"
+    ],
+    "load_error": false
+  },
+  {
+    "name": "move",
+    "description": "Move a track to a different position in the queue.",
+    "category": "Music",
+    "type": "prefix",
+    "arguments": [],
+    "permissions": [],
+    "aliases": [
+      "mv"
     ],
     "load_error": false
   },
@@ -1230,6 +1749,18 @@
     "load_error": false
   },
   {
+    "name": "nowplaying",
+    "description": "Show the currently playing track.",
+    "category": "Music",
+    "type": "prefix",
+    "arguments": [],
+    "permissions": [],
+    "aliases": [
+      "np"
+    ],
+    "load_error": false
+  },
+  {
     "name": "nuke",
     "description": "Deletes and clones a channel to clear its history.",
     "category": "Moderation",
@@ -1280,6 +1811,26 @@
     "load_error": false
   },
   {
+    "name": "owner",
+    "description": "Manage the AI system. (Dev only)",
+    "category": "AI",
+    "type": "prefix",
+    "arguments": [],
+    "permissions": [],
+    "aliases": [],
+    "load_error": false
+  },
+  {
+    "name": "parents",
+    "description": "View your parents or another user's parents.",
+    "category": "Family",
+    "type": "prefix",
+    "arguments": [],
+    "permissions": [],
+    "aliases": [],
+    "load_error": false
+  },
+  {
     "name": "pat",
     "description": "Pat someone.",
     "category": "Roleplay",
@@ -1287,6 +1838,31 @@
     "arguments": [],
     "permissions": [],
     "aliases": [],
+    "load_error": false
+  },
+  {
+    "name": "pause",
+    "description": "Pause the current playback.",
+    "category": "Music",
+    "type": "prefix",
+    "arguments": [],
+    "permissions": [],
+    "aliases": [
+      "pa"
+    ],
+    "load_error": false
+  },
+  {
+    "name": "pbattle",
+    "description": "⚠️ Could not load details for this command.",
+    "category": "Anime",
+    "type": "prefix",
+    "arguments": [],
+    "permissions": [],
+    "aliases": [
+      "duel",
+      "pvp"
+    ],
     "load_error": false
   },
   {
@@ -1330,6 +1906,18 @@
     "arguments": [],
     "permissions": [],
     "aliases": [],
+    "load_error": false
+  },
+  {
+    "name": "play",
+    "description": "Play a song from a given query or URL.",
+    "category": "Music",
+    "type": "prefix",
+    "arguments": [],
+    "permissions": [],
+    "aliases": [
+      "p"
+    ],
     "load_error": false
   },
   {
@@ -1377,6 +1965,19 @@
     "load_error": false
   },
   {
+    "name": "previewsell",
+    "description": "Preview how much a waifu would sell for without selling.",
+    "category": "Anime",
+    "type": "prefix",
+    "arguments": [],
+    "permissions": [],
+    "aliases": [
+      "psell",
+      "sellpreview"
+    ],
+    "load_error": false
+  },
+  {
     "name": "profile",
     "description": "⚠️ Could not load details for this command.",
     "category": "Economy",
@@ -1413,6 +2014,18 @@
     "load_error": false
   },
   {
+    "name": "queue",
+    "description": "Display the current song queue.",
+    "category": "Music",
+    "type": "prefix",
+    "arguments": [],
+    "permissions": [],
+    "aliases": [
+      "q"
+    ],
+    "load_error": false
+  },
+  {
     "name": "rank",
     "description": "⚠️ Could not load details for this command.",
     "category": "Level",
@@ -1438,9 +2051,31 @@
     "load_error": false
   },
   {
+    "name": "reactionsnipe",
+    "description": "Retrieve recently removed reactions.",
+    "category": "Moderation",
+    "type": "prefix",
+    "arguments": [],
+    "permissions": [],
+    "aliases": [
+      "rs"
+    ],
+    "load_error": false
+  },
+  {
     "name": "reason",
     "description": "⚠️ Could not load details for this command.",
     "category": "Moderation",
+    "type": "prefix",
+    "arguments": [],
+    "permissions": [],
+    "aliases": [],
+    "load_error": false
+  },
+  {
+    "name": "redeem",
+    "description": "Redeem a premium or bonus key.",
+    "category": "AI",
     "type": "prefix",
     "arguments": [],
     "permissions": [],
@@ -1455,6 +2090,19 @@
     "arguments": [],
     "permissions": [],
     "aliases": [],
+    "load_error": false
+  },
+  {
+    "name": "remove",
+    "description": "Remove a track from the queue by position.",
+    "category": "Music",
+    "type": "prefix",
+    "arguments": [],
+    "permissions": [],
+    "aliases": [
+      "rm",
+      "delete"
+    ],
     "load_error": false
   },
   {
@@ -1476,6 +2124,19 @@
     "permissions": [],
     "aliases": [
       "rc"
+    ],
+    "load_error": false
+  },
+  {
+    "name": "resume",
+    "description": "Resume the paused playback.",
+    "category": "Music",
+    "type": "prefix",
+    "arguments": [],
+    "permissions": [],
+    "aliases": [
+      "r",
+      "res"
     ],
     "load_error": false
   },
@@ -1549,6 +2210,28 @@
     "load_error": false
   },
   {
+    "name": "roleinfo",
+    "description": "Display detailed information about a role.",
+    "category": "General",
+    "type": "prefix",
+    "arguments": [],
+    "permissions": [],
+    "aliases": [
+      "ri"
+    ],
+    "load_error": false
+  },
+  {
+    "name": "roles",
+    "description": "Lists all roles in the server from highest to lowest position.",
+    "category": "Moderation",
+    "type": "prefix",
+    "arguments": [],
+    "permissions": [],
+    "aliases": [],
+    "load_error": false
+  },
+  {
     "name": "roll",
     "description": "⚠️ Could not load details for this command.",
     "category": "Anime",
@@ -1562,8 +2245,30 @@
     "load_error": false
   },
   {
-    "name": "runmute",
+    "name": "roulette",
     "description": "⚠️ Could not load details for this command.",
+    "category": "Economy",
+    "type": "prefix",
+    "arguments": [],
+    "permissions": [],
+    "aliases": [
+      "rlt"
+    ],
+    "load_error": false
+  },
+  {
+    "name": "runaway",
+    "description": "Run away from your parents.",
+    "category": "Family",
+    "type": "prefix",
+    "arguments": [],
+    "permissions": [],
+    "aliases": [],
+    "load_error": false
+  },
+  {
+    "name": "runmute",
+    "description": "Restores reaction permissions for a member.",
     "category": "Moderation",
     "type": "prefix",
     "arguments": [],
@@ -1604,6 +2309,31 @@
     "load_error": false
   },
   {
+    "name": "scratch",
+    "description": "⚠️ Could not load details for this command.",
+    "category": "Economy",
+    "type": "prefix",
+    "arguments": [],
+    "permissions": [],
+    "aliases": [
+      "scratchticket",
+      "ticket"
+    ],
+    "load_error": false
+  },
+  {
+    "name": "sellwaifu",
+    "description": "Sell a waifu by DB id. Usage: .sellwaifu <id>",
+    "category": "Anime",
+    "type": "prefix",
+    "arguments": [],
+    "permissions": [],
+    "aliases": [
+      "sell"
+    ],
+    "load_error": false
+  },
+  {
     "name": "serverinfo",
     "description": "Display detailed information about the current server.",
     "category": "General",
@@ -1614,16 +2344,6 @@
       "si",
       "server"
     ],
-    "load_error": false
-  },
-  {
-    "name": "setbal",
-    "description": "⚠️ Could not load details for this command.",
-    "category": "Anime",
-    "type": "prefix",
-    "arguments": [],
-    "permissions": [],
-    "aliases": [],
     "load_error": false
   },
   {
@@ -1690,9 +2410,32 @@
     "load_error": false
   },
   {
+    "name": "shuffle",
+    "description": "Shuffle the current queue.",
+    "category": "Music",
+    "type": "prefix",
+    "arguments": [],
+    "permissions": [],
+    "aliases": [
+      "sh",
+      "mix"
+    ],
+    "load_error": false
+  },
+  {
     "name": "shy",
     "description": "Get shy around someone.",
     "category": "Roleplay",
+    "type": "prefix",
+    "arguments": [],
+    "permissions": [],
+    "aliases": [],
+    "load_error": false
+  },
+  {
+    "name": "siblings",
+    "description": "Become siblings with another user.",
+    "category": "Family",
     "type": "prefix",
     "arguments": [],
     "permissions": [],
@@ -1720,6 +2463,19 @@
     "load_error": false
   },
   {
+    "name": "skip",
+    "description": "Skip the current track.",
+    "category": "Music",
+    "type": "prefix",
+    "arguments": [],
+    "permissions": [],
+    "aliases": [
+      "sagf23",
+      "next"
+    ],
+    "load_error": false
+  },
+  {
     "name": "slap",
     "description": "Slap someone.",
     "category": "Roleplay",
@@ -1737,6 +2493,19 @@
     "arguments": [],
     "permissions": [],
     "aliases": [],
+    "load_error": false
+  },
+  {
+    "name": "slots",
+    "description": "⚠️ Could not load details for this command.",
+    "category": "Economy",
+    "type": "prefix",
+    "arguments": [],
+    "permissions": [],
+    "aliases": [
+      "slot",
+      "slotmachine"
+    ],
     "load_error": false
   },
   {
@@ -1879,6 +2648,19 @@
     "permissions": [],
     "aliases": [
       "sticky"
+    ],
+    "load_error": false
+  },
+  {
+    "name": "stop",
+    "description": "Stop playback and clear the queue.",
+    "category": "Music",
+    "type": "prefix",
+    "arguments": [],
+    "permissions": [],
+    "aliases": [
+      "st",
+      "leave"
     ],
     "load_error": false
   },
@@ -2051,6 +2833,30 @@
     "load_error": false
   },
   {
+    "name": "trash",
+    "description": "Put items into the trash (remove from your inventory). Usage: .trash <itemName> [amount|all]",
+    "category": "Economy",
+    "type": "prefix",
+    "arguments": [],
+    "permissions": [],
+    "aliases": [
+      "bin",
+      "discard",
+      "drop"
+    ],
+    "load_error": false
+  },
+  {
+    "name": "tree",
+    "description": "View the massive visual family tree of a user.",
+    "category": "Family",
+    "type": "prefix",
+    "arguments": [],
+    "permissions": [],
+    "aliases": [],
+    "load_error": false
+  },
+  {
     "name": "tts",
     "description": "Text-to-speech",
     "category": "Fun",
@@ -2108,6 +2914,18 @@
     "load_error": false
   },
   {
+    "name": "unfav",
+    "description": "Unfavorite a waifu you own. Usage: .unfav <id>",
+    "category": "Anime",
+    "type": "prefix",
+    "arguments": [],
+    "permissions": [],
+    "aliases": [
+      "unfavorite"
+    ],
+    "load_error": false
+  },
+  {
     "name": "unhide",
     "description": "Restores visibility of a channel to @everyone.",
     "category": "Moderation",
@@ -2119,7 +2937,7 @@
   },
   {
     "name": "unjail",
-    "description": "Release a member from jail by mention, ID, or partial name.",
+    "description": "Release a member from jail and notify them via DM.",
     "category": "Moderation",
     "type": "prefix",
     "arguments": [],
@@ -2160,6 +2978,19 @@
     "load_error": false
   },
   {
+    "name": "unrestrictcommand",
+    "description": "Removes restrictions from a specific command.",
+    "category": "Moderation",
+    "type": "prefix",
+    "arguments": [],
+    "permissions": [],
+    "aliases": [
+      "unrc",
+      "unrestrict"
+    ],
+    "load_error": false
+  },
+  {
     "name": "untimeout",
     "description": "Remove a timeout with hierarchy protection and full embeds.",
     "category": "Moderation",
@@ -2182,6 +3013,34 @@
     "load_error": false
   },
   {
+    "name": "vanity",
+    "description": "Configure vanity status rewards.",
+    "category": "Utils",
+    "type": "prefix",
+    "arguments": [],
+    "permissions": [],
+    "aliases": [
+      "statusreward",
+      "vr"
+    ],
+    "load_error": false
+  },
+  {
+    "name": "vanity",
+    "description": "Configure vanity status rewards.",
+    "category": "Utils",
+    "type": "slash",
+    "arguments": [
+      "[set]",
+      "[role]",
+      "[list]",
+      "[reset]"
+    ],
+    "permissions": [],
+    "aliases": [],
+    "load_error": false
+  },
+  {
     "name": "verify",
     "description": "Sentinel Verification System Control",
     "category": "Setup",
@@ -2192,6 +3051,19 @@
     ],
     "permissions": [],
     "aliases": [],
+    "load_error": false
+  },
+  {
+    "name": "volume",
+    "description": "Set the playback volume (1-100).",
+    "category": "Music",
+    "type": "prefix",
+    "arguments": [],
+    "permissions": [],
+    "aliases": [
+      "v",
+      "vol"
+    ],
     "load_error": false
   },
   {
@@ -2228,9 +3100,8 @@
     "arguments": [],
     "permissions": [],
     "aliases": [
-      "inv",
       "harem",
-      "inventory"
+      "baddies"
     ],
     "load_error": false
   },
@@ -2253,7 +3124,7 @@
     "permissions": [],
     "aliases": [
       "warnings",
-      "history"
+      "whistory"
     ],
     "load_error": false
   },
@@ -2269,17 +3140,40 @@
   },
   {
     "name": "welcome",
+    "description": "Configure server welcome messages (supports prefix and slash).",
+    "category": "General",
+    "type": "prefix",
+    "arguments": [],
+    "permissions": [],
+    "aliases": [],
+    "load_error": false
+  },
+  {
+    "name": "welcome",
     "description": "Configure the server's welcome messages.",
     "category": "Setup",
     "type": "slash",
     "arguments": [
-      "[set]",
+      "[channel]",
+      "[dm]",
       "[disable]",
       "[test]",
       "[status]"
     ],
     "permissions": [],
     "aliases": [],
+    "load_error": false
+  },
+  {
+    "name": "wheel",
+    "description": "⚠️ Could not load details for this command.",
+    "category": "Economy",
+    "type": "prefix",
+    "arguments": [],
+    "permissions": [],
+    "aliases": [
+      "spinwheel"
+    ],
     "load_error": false
   },
   {
@@ -2321,6 +3215,18 @@
     "load_error": false
   },
   {
+    "name": "withdraw",
+    "description": "Withdraw money from your bank to your wallet.",
+    "category": "Economy",
+    "type": "prefix",
+    "arguments": [],
+    "permissions": [],
+    "aliases": [
+      "with"
+    ],
+    "load_error": false
+  },
+  {
     "name": "woah",
     "description": "Gasp at someone.",
     "category": "Roleplay",
@@ -2359,6 +3265,16 @@
     "name": "work",
     "description": "⚠️ Could not load details for this command.",
     "category": "Economy",
+    "type": "prefix",
+    "arguments": [],
+    "permissions": [],
+    "aliases": [],
+    "load_error": false
+  },
+  {
+    "name": "yart",
+    "description": "The ultimate virtual weed pen experience.",
+    "category": "Fun",
     "type": "prefix",
     "arguments": [],
     "permissions": [],
